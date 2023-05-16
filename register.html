@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/174a9c1444.js" crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+    <div id="form-screen">
+        <div class="rlform-wrapper">
+
+            <div class="rl-instalogo-wrap">
+                <img src="./images/instalogo.png" alt="">
+            </div>
+            <p class="sg-line">Sign up to see photos and videos from your friends</p>
+
+            <div class="act-form-container">
+                <form action="" onsubmit="register(event)">
+                    <input type="text" placeholder="Username" id="username" class="fb-rl-in">
+                    <input type="email" placeholder="Email" id="useremail"class="fb-rl-in">
+                    <input type="password" placeholder="Password" id="userpassword"class="fb-rl-in">
+                    <input type="password" placeholder="Confirm Password" id="userconfirmpassword"class="fb-rl-in">
+
+                    <p  class="rl-policy-txt">By singing up,you agree to our terms, Privacy Policy and Cookies Policy. </p>
+
+                    <input type="submit" value="Sign up" class="rl-signup-btn">
+
+                    <div class="rl-ex-user-txt" onclick="window.location.href='./login.html'">Already have an account? <span class="rl-singin-txt">Login</span> </div>
+                </form>
+            </div>
+
+        </div>
+    </div>
+
+
+    <script src="./main.js"></script>
+</body>
+
+</html>

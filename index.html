@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instagram</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/174a9c1444.js" crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+    <div id="screen">
+        <div class="screenContainer">
+            <div class="navbarWrapper">
+                <div class="instLogoContainer">
+                    <img src="./images/instalogo.png" alt="">
+                </div>
+
+                <div class="navlinkWrapper">
+                    <div class="navlink">
+                        <span class="nlIcon"><i class="fa-solid fa-house"></i></span>
+                        <span class="navlinkName activeLink">Home</span>
+                    </div>
+                    <div class="navlink">
+                        <span class="nlIcon"><i class="fa-solid fa-magnifying-glass"></i> </span>
+                        <span class="navlinkName"> Search </span>
+                    </div>
+                    <div class="navlink">
+                        <span class="nlIcon"> <i class="fa-regular fa-compass"></i></span>
+                        <span class="navlinkName"> Explore </span>
+                    </div>
+                    <div class="navlink">
+                        <span class="nlIcon"><i class="fa-solid fa-clapperboard"></i> </span>
+                        <span class="navlinkName"> Reels </span>
+                    </div>
+                    <div class="navlink">
+                        <span class="nlIcon"><i class="fa-regular fa-message"></i> </span>
+                        <span class="navlinkName"> Messages </span>
+                    </div>
+                    <div class="navlink">
+                        <span class="nlIcon"><i class="fa-regular fa-heart"></i> </span>
+                        <span class="navlinkName"> Notifications </span>
+                    </div>
+                    <div class="navlink">
+                        <span class="nlIcon"><i class="fa-regular fa-square-plus"></i> </span>
+                        <span class="navlinkName"> create </span>
+                    </div>
+                    <div class="navlink">
+                        <span class="nlIcon"> <i class="fa-regular fa-user"></i> </span>
+                        <span class="navlinkName" id="switch">Profile </span>
+                    </div>
+
+                    <div id="logout" class="navlink"></div>
+
+                    <div class="navlink">
+                        <span class="nlIcon"><i class="fa-solid fa-bars"></i></span>
+                        <span class="navlinkName"> More </span>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="mainContentWrapper">
+                <div class="mainStoryContainer">
+                    <div class="singleStoryWrap">
+                        <div class="storyImgWrap">
+                            <img src="https://qph.cf2.quoracdn.net/main-qimg-f34d96176eb12adcc87a17f1e60871f1-lq"
+                                alt="">
+                        </div>
+                        <div class="storyUserName">
+                            animequotes.y
+                        </div>
+                    </div>
+                    <div class="singleStoryWrap">
+                        <div class="storyImgWrap">
+                            <img src="https://lh3.googleusercontent.com/TOJUwoR-4bKat02zfWuoC_1X4YvqAxORO3ZiESE9gaM_ozwmcDTOY0HYlfVJ7XGv6gwZkMlladVcC2FVuaTWIveWEI-f7GD7nmm4lxDVS6otRSQ=w960-rj-nu-e365"
+                                alt="">
+                        </div>
+                        <div class="storyUserName">
+                            thv
+                        </div>
+                    </div>
+                    <div class="singleStoryWrap">
+                        <div class="storyImgWrap">
+                            <img src="https://static.toiimg.com/thumb/msid-94081104,width-1280,resizemode-4/94081104.jpg"
+                                alt="">
+                        </div>
+                        <div class="storyUserName">
+                            virat.kohli
+                        </div>
+                    </div>
+                    <div class="singleStoryWrap">
+                        <div class="storyImgWrap">
+                            <img src="https://qph.cf2.quoracdn.net/main-qimg-f34d96176eb12adcc87a17f1e60871f1-lq"
+                                alt="">
+                        </div>
+                        <div class="storyUserName">
+                            animequotes.y
+                        </div>
+                    </div>
+                    <div class="singleStoryWrap">
+                        <div class="storyImgWrap">
+                            <img src="https://lh3.googleusercontent.com/TOJUwoR-4bKat02zfWuoC_1X4YvqAxORO3ZiESE9gaM_ozwmcDTOY0HYlfVJ7XGv6gwZkMlladVcC2FVuaTWIveWEI-f7GD7nmm4lxDVS6otRSQ=w960-rj-nu-e365"
+                                alt="">
+                        </div>
+                        <div class="storyUserName">
+                            thv
+                        </div>
+                    </div>
+                    <div class="singleStoryWrap">
+                        <div class="storyImgWrap">
+                            <img src="https://static.toiimg.com/thumb/msid-94081104,width-1280,resizemode-4/94081104.jpg"
+                                alt="">
+                        </div>
+                        <div class="storyUserName">
+                            virat.kohli
+                        </div>
+                    </div>
+                    <div class="singleStoryWrap">
+                        <div class="storyImgWrap">
+                            <img src="https://qph.cf2.quoracdn.net/main-qimg-f34d96176eb12adcc87a17f1e60871f1-lq"
+                                alt="">
+                        </div>
+                        <div class="storyUserName">
+                            animequotes.y
+                        </div>
+                    </div>
+                </div>
+
+
+
+            </div>
+
+            <div class="rightSideWrapper">
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <script>
+        window.onload = function () {
+            // alert("working")
+            var currentUser = JSON.parse(localStorage.getItem("InstaCurrentUser"))
+            // console.log(currentUser,"current user");
+            if (!!currentUser) {
+                // alert(currenUser,"username")
+                var logoutDiv = document.getElementById("logout")
+                var divfromHtml = document.getElementById("switch");
+                // console.log(divfromHtml, "divfromhtml");
+                // var h1=document.createElement("h1");
+                // h1.innerText="Mayuri"
+                // divfromHtml.append(h1)
+                var button = '<span class="nlIcon"><i class="fa-solid fa-arrow-right-from-bracket id=logout-icon"></i></span> <span onclick="logout()" class="navlinkName">Logout</span>'
+                var name = `<span>${currentUser.userName}</span>`;
+                divfromHtml.innerHTML = name;
+                logoutDiv.innerHTML = button;
+
+            }
+            //  else {
+            //     alert("current user absent")
+            // }
+        }
+
+        function logout() {
+            alert("Logout successful.")
+            localStorage.removeItem("InstaCurrentUser")
+            window.location.reload()
+
+
+        }
+    </script>
+</body>
+
+</html>
