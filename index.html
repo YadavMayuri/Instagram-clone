@@ -64,7 +64,7 @@
             </div>
 
             <div class="mainContentWrapper">
-                <div class="mainStoryContainer">
+                <div class="mainStoryContainer" id="InstaStoryContainer">
                     
                     <div class="singleStoryWrap">
                         <div class="storyImgWrap">
@@ -75,15 +75,7 @@
                             Mayuri
                         </div>
                     </div>
-                    <div class="singleStoryWrap">
-                        <div class="storyImgWrap">
-                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQajVijyoJgMl3Gpyve3xw1osi4bljAFkRVaQ&usqp=CAU"
-                                alt="">
-                        </div>
-                        <div class="storyUserName">
-                            Sheetal
-                        </div>
-                    </div>
+                 
 
                 </div>
                 
@@ -273,11 +265,28 @@
 
             var divToAppendAllPosts = document.getElementById("InstaPostsContainer")
 
+            var divToAppendAllStories = document.getElementById("InstaStoryContainer")
             var finalInstaPosts = "";
+
+            var finalInstaStory ="";
 
             var postsFromLS = JSON.parse(localStorage.getItem("InstPosts"))
 
-            for (var i = 0; i < postsFromLS.length; i++) {
+            for (var i=0; i<postsFromLS.length; i++){
+                finalInstaStory +=` <div class="singleStoryWrap">
+                        <div class="storyImgWrap">
+                            <img src="${postsFromLS[i].UserPImg}" alt="">
+                        </div>
+                        <div class="storyUserName">
+                            ${postsFromLS[i].UserName}
+                        </div>
+                    </div>`
+            }
+
+            divToAppendAllStories.innerHTML = finalInstaStory;
+
+
+            for (var i = postsFromLS.length-1; i >= 0; i--) {
 
                 finalInstaPosts += `<div class="singlePostWrap" onclick='redirect(${JSON.stringify(postsFromLS[i])})'>
                         <div class="postHeaderSection">
