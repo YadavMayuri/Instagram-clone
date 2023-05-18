@@ -266,19 +266,22 @@
             var divToAppendAllPosts = document.getElementById("InstaPostsContainer")
 
             var divToAppendAllStories = document.getElementById("InstaStoryContainer")
+            
             var finalInstaPosts = "";
 
             var finalInstaStory ="";
 
             var postsFromLS = JSON.parse(localStorage.getItem("InstPosts"))
 
-            for (var i=0; i<postsFromLS.length; i++){
+            var storyFromLS = JSON.parse(localStorage.getItem("InstStory"))
+
+            for (var i=0; i<storyFromLS.length; i++){
                 finalInstaStory +=` <div class="singleStoryWrap">
                         <div class="storyImgWrap">
-                            <img src="${postsFromLS[i].UserPImg}" alt="">
+                            <img src="${storyFromLS[i].UserPImg}" alt="">
                         </div>
                         <div class="storyUserName">
-                            ${postsFromLS[i].UserName}
+                            ${storyFromLS[i].UserName}
                         </div>
                     </div>`
             }
