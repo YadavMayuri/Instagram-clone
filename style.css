@@ -122,6 +122,7 @@ html {
 
 .instLogoContainer {
     width: 60%;
+    cursor: pointer;
 
 }
 
@@ -148,6 +149,9 @@ html {
     font-size: 2.2rem;
     margin-right: 1.5rem;
 }
+.navlinkName{
+    text-transform: capitalize;
+}
 .activeLink{
     font-weight: 700;
 }
@@ -168,7 +172,7 @@ html {
     display: flex;
     justify-content: start;
     align-items: center;
-    gap: 1rem;
+    gap: 1.5rem;
     padding: 0 1rem;
 }
 .singleStoryWrap{
@@ -226,7 +230,7 @@ html {
 }
 .postProfileImgWrap{
     width: 8%;
-
+    cursor: pointer;
 }
 .postProfileImgWrap img{
     width: 100%;
@@ -237,6 +241,7 @@ html {
 }
 .PostUserName{
     font-weight: 550;
+    cursor: pointer;
 }
 .divider{
     font-weight: 550;
@@ -307,6 +312,7 @@ html {
 }
 .ProfImgContainer{
     width: 20%;
+    cursor: pointer;
 
 }
 .ProfImgContainer img{
@@ -323,6 +329,7 @@ html {
 }
 .rUserName{
     font-weight: 550;
+    cursor: pointer;
 }
 .subNamr{
     color: gray;
@@ -332,6 +339,7 @@ html {
     color: dodgerblue;
     font-weight: 550;
     text-transform: capitalize;
+    cursor: pointer;
 }
 .rightSuggWrap{
     /* border: .1rem solid rebeccapurple; */
@@ -347,7 +355,11 @@ html {
 }
 .seeall{
     font-weight: 550;
+    cursor: pointer;
     
+}
+.seeall:hover{
+    color: gray;
 }
 .suggestedProfileContainer{
     /* border: .1rem solid red; */
@@ -368,9 +380,11 @@ html {
 .suggrightSection{
     color: dodgerblue;
     font-weight: 550;
+    cursor: pointer;
 }
 .SRProfileImag{
     width: 13%;
+    cursor: pointer;
 }
 .SRProfileImag img{
     width: 100%;
@@ -382,6 +396,7 @@ html {
 }
 .SRUserName{
     font-weight: 550;
+    cursor: pointer;
 }
 .SRverified{
     color: dodgerblue;
@@ -390,6 +405,9 @@ html {
 .SRUserFollwed{
     font-size: 1.2rem ;
     color: gray;
+}
+.suggrightSection:hover{
+    color: rgb(38, 99, 161);
 }
 .hrline{
     border: .1rem solid lightgray;
