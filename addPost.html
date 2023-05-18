@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instagram</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/174a9c1444.js" crossorigin="anonymous"></script>
+    <style>
+        body {
+            font-size: 1.4rem;
+            font-weight: 550;
+        }
+    </style>
+</head>
+
+<body>
+
+    <form onsubmit="addProduct(event)">
+        <label for="">User Profile Image</label><br>
+        <input type="text" name="" id="UserPImg"><br>
+        <label>User Name</label><br />
+        <input type="text" id="uname" /><br />
+        <label>Post Image url</label><br />
+        <input type="text" id="pimage" /><br />
+        <label for="">Post Descripiton</label><br>
+        <input type="text" id="pdesc"><br>
+
+        <input type="submit" /><br />
+    </form>
+
+
+
+    <script>
+        function addProduct(event) {
+            event.preventDefault();
+            // alert("Product adding....")
+            var UserPImg = document.getElementById("UserPImg").value
+            var UserName = document.getElementById("uname").value;
+            var PostImg = document.getElementById("pimage").value;
+            var PostDecs = document.getElementById("pdesc").value
+
+            var product = { UserPImg, UserName, PostImg, PostDecs };
+
+            var LS = JSON.parse(localStorage.getItem("InstPosts")) || [];
+            LS.push(product);
+            localStorage.setItem("InstPosts", JSON.stringify(LS));
+
+            alert("Product Added Successfully.")
+
+
+        }
+    </script>
+</body>
+
+</html>
