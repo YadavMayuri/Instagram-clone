@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -14,16 +15,36 @@
         }
     </style>
 </head>
+
 <body>
 
-    <form onsubmit="addStory(event)">
-        <label for="">User Profile Image</label><br>
-        <input type="text" name="" id="UserPImg"><br>
-        <label>User Name</label><br />
-        <input type="text" id="uname" /><br />
-       
-        <input type="submit" /><br />
-    </form>
+    <div id="addstoryscreen">
+
+
+        <div class="addpostwrapper">
+            <div class="leftapcontainer">
+                <div class="apimgwrap">
+                    <img src="https://embedsocial.com/wp-content/uploads/2020/10/add-links-instagram-posts.jpg" alt="">
+                </div>
+            </div>
+            <div class="rightapcontainer">
+
+                <h2 class="formaheading">Add Story</h2>
+
+                <form onsubmit="addStory(event)" class="aformcontainer">
+                    <input type="text" id="UserPImg" placeholder="User Profile Image URL" class="faInput"><br />
+                    <input type="text" id="uname" placeholder="User Name" class="faInput" /><br />
+
+                    <input type="submit" value="Add Story" class="abtn" /><br />
+                </form>
+            </div>
+
+        </div>
+
+
+    </div>
+
+
 
 
 
@@ -33,8 +54,8 @@
             // alert("Product adding....")
             var UserPImg = document.getElementById("UserPImg").value
             var UserName = document.getElementById("uname").value;
-          
-            var product = { UserPImg, UserName};
+
+            var product = { UserPImg, UserName };
 
             var LS = JSON.parse(localStorage.getItem("InstStory")) || [];
             LS.push(product);
@@ -45,6 +66,7 @@
 
         }
     </script>
-    
+
 </body>
+
 </html>

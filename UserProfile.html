@@ -78,7 +78,7 @@
 
                         <div class="MiddleProfileOptions">
                             <div class="postTxtCountWrap">
-                                <span class="PostCount"> 2</span>
+                                <span class="PostCount"> 3</span>
                                 <span class="PostTxt">posts</span>
                             </div>
                             <div class="followersTxtCountWrap">
@@ -118,26 +118,179 @@
 
                     <div class="mainProfilePostContainer">
                         <div class="PflPostImage">
-                            <img src="./images/mayuri1.jpeg" alt="">
+                            <img src="./images/profilepost2.jpg" alt="">
+                            <div class="overlay ">
+                                <span class="overlayIcon">
+                                    <span class="ovicon"><i class="fa-solid fa-heart"></i>10</span>
+                                    <span class="ovicon"><i class="fa-solid fa-comment"></i>3</span>
+                                </span>
+                            </div>
                         </div>
                         <div class="PflPostImage">
-                            <img src="./images/mayuri1.jpeg" alt="">
+                            <img src="./images/profilepost1.jpg" alt="">
+                            <div class="overlay ">
+                                <span class="overlayIcon">
+                                    <span class="ovicon"><i class="fa-solid fa-heart"></i>10</span>
+                                    <span class="ovicon"><i class="fa-solid fa-comment"></i>3</span>
+                                </span>
+                            </div>
                         </div>
                         <div class="PflPostImage">
-                            <img src="./images/mayuri1.jpeg" alt="">
-                        </div>
-                        <div class="PflPostImage">
-                            <img src="./images/mayuri1.jpeg" alt="">
+                            <img src="./images/profilepost3.jpg" alt="">
+                            <div class="overlay ">
+                                <span class="overlayIcon">
+                                    <span class="ovicon"><i class="fa-solid fa-heart"></i>10</span>
+                                    <span class="ovicon"><i class="fa-solid fa-comment"></i>3</span>
+                                </span>
+                            </div>
                         </div>
 
 
                     </div>
+
+
                 </div>
+
+                <!-- footer -->
+                <div class="footer">
+                    <div class="footerWrapper">
+                        <span class="footerLink"> Meta</span>
+                        <span class="footerLink"> about</span>
+                        <span class="footerLink"> blog </span>
+                        <span class="footerLink"> jobs</span>
+                        <span class="footerLink"> help</span>
+                        <span class="footerLink"> API</span>
+                        <span class="footerLink"> privacy</span>
+                        <span class="footerLink"> terms</span>
+                        <span class="footerLink"> Top Accounts</span>
+                        <span class="footerLink"> locations</span>
+                        <span class="footerLink"> instagram lite</span>
+                        <span class="footerLink"> contact uploading & non-users</span>
+                        <span class="footerLink"> meta verified</span>
+                    </div>
+    
+                    <div class="copyrightFooter">
+                        <span class="footerLink">English</span>
+                        <span class="footerLink">© 2023 Instagram from Meta</span>
+                    </div>
+                </div>
+               
+
             </div>
 
         </div>
 
     </div>
     
+
+    <script>
+        window.onload = function () {
+            // alert("working")
+            var currentUser = JSON.parse(localStorage.getItem("InstaCurrentUser"))
+            // console.log(currentUser,"current user");
+            if (!!currentUser) {
+                // alert(currenUser,"username")
+                var logoutDiv = document.getElementById("logout")
+                var divfromHtml = document.getElementById("switch");
+                // console.log(divfromHtml, "divfromhtml");
+                // var h1=document.createElement("h1");
+                // h1.innerText="Mayuri"
+                // divfromHtml.append(h1)
+                var button = '<span class="nlIcon"><i class="fa-solid fa-arrow-right-from-bracket id=logout-icon"></i></span> <span onclick="logout()" class="navlinkName">Logout</span>'
+                var name = `<span>${currentUser.userName}</span>`;
+                divfromHtml.innerHTML = name;
+                logoutDiv.innerHTML = button;
+
+            }
+            //  else {
+            //     alert("current user absent")
+            // }
+
+
+            var divToAppendAllPosts = document.getElementById("InstaPostsContainer")
+
+            var divToAppendAllStories = document.getElementById("InstaStoryContainer")
+
+            var finalInstaPosts = "";
+
+            var finalInstaStory ="";
+
+            var postsFromLS = JSON.parse(localStorage.getItem("InstPosts"))
+
+            var storyFromLS = JSON.parse(localStorage.getItem("InstStory"))
+
+            for (var i=0; i<storyFromLS.length; i++){
+                finalInstaStory +=` <div class="singleStoryWrap">
+                        <div class="storyImgWrap">
+                            <img src="${storyFromLS[i].UserPImg}" alt="">
+                        </div>
+                        <div class="storyUserName">
+                            ${storyFromLS[i].UserName}
+                        </div>
+                    </div>`
+            }
+
+            divToAppendAllStories.innerHTML = finalInstaStory;
+
+
+            for (var i = postsFromLS.length-1; i >= 0; i--) {
+
+                finalInstaPosts += `<div class="singlePostWrap" onclick='redirect(${JSON.stringify(postsFromLS[i])})'>
+                        <div class="postHeaderSection">
+                            <div class="leftheadwrap">
+                                <div class="postProfileImgWrap">
+                                    <img src="${postsFromLS[i].UserPImg}" alt="">
+                                </div>
+                                <span class="PostUserName"> ${postsFromLS[i].UserName}</span>
+                                <span class="divider">.</span>
+                                <span class="postUploadHours"> 1d</span>
+                                <!-- <span class="followOpt">Follow</span> -->
+                            </div>
+                            <span class="rightOptionsicon"><i class="fa-solid fa-ellipsis"></i></span>
+                        </div>
+                        <div class="postContentSection">
+                            <img src="${postsFromLS[i].PostImg}" alt="">
+                        </div>
+                        <div class="postrelOptions">
+                            <div class="leftPostROptions">
+                                <span><i class="fa-regular fa-heart"></i> </span>
+                                <span><i class="fa-regular fa-comment"></i> </span>
+                                <span><i class="fa-regular fa-paper-plane"></i> </span>
+                            </div>
+                            <div class="rightPostROption">
+                                <span><i class="fa-regular fa-bookmark"></i></span>
+                            </div>
+                        </div>
+                        <div class="likesCount">934 <span>likes</span></div>
+                        <p class="postDescSection">
+                            <span class="postUsernamedesc">${postsFromLS[i].UserName} </span>
+                            <span class="postdescription">${postsFromLS[i].PostDecs}</span>
+                        </p>
+                        <hr class="hrline">
+                        
+                    </div>`
+
+            }
+
+            divToAppendAllPosts.innerHTML = finalInstaPosts;
+
+
+
+
+
+
+
+
+
+        }
+
+        function logout() {
+            alert("Logout successful.")
+            localStorage.removeItem("InstaCurrentUser")
+            window.location.reload()
+
+
+        }
+    </script>
 </body>
 </html>
