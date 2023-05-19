@@ -10,7 +10,7 @@ html {
 }
 
 .rlform-wrapper {
-    width: 35%;
+    width: 30%;
     border: .1rem solid black;
     margin: 2rem auto;
     text-align: center;
@@ -519,7 +519,7 @@ html {
 .UInstaID {
     font-size: 2rem;
     /* font-weight: 550; */
-    margin-right: 2rem;
+    margin-right: 2.5rem;
 
 }
 
@@ -530,12 +530,13 @@ html {
     background-color: rgb(236, 231, 231);
     padding: .5rem 1rem;
     border-radius: .3rem;
-    margin-right: 2rem;
-
+    margin-right: 2.5rem;
+    cursor: pointer;
 }
 
 .UProfileSettingOption {
     font-size: 1.8rem;
+    cursor: pointer;
 }
 
 .MiddleProfileOptions {
@@ -616,7 +617,9 @@ html {
     width: 35%;
     margin: auto;
 }
-
+.ProfileOptionConatainer{
+    cursor: pointer;
+}
 .postOptName {
     text-transform: uppercase;
     font-size: 1.3rem;
