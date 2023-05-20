@@ -85,5 +85,25 @@ function login(event) {
 
 }
 
+//add post to profile
+// function addProfilePost(event) {
+//     event.preventDefault();
+//     // alert("Product adding....")
+//     // var pname = document.getElementById("pname").value;
+//     // var pprofile = document.getElementById("pprofile").value;
+//     var pimage = document.getElementById("pimage").value;
+//     // var pcaption = document.getElementById("pcaption").value;
+//     var product = { pimage };
 
+//     var LS = JSON.parse(localStorage.getItem("instagramProfilePosts")) || [];
+//     LS.push(product);
+//     localStorage.setItem("instagramProfilePosts", JSON.stringify(LS));
+
+//     alert("Post Added Successfully.")
+//     // window.location.href="./profile.html"
+//     // document.getElementById("pname").value = "";
+//     // document.getElementById("pprofile").value = "";
+//     document.getElementById("pimage").value = "";
+//     // document.getElementById("pcaption").value = "";
+// }
 

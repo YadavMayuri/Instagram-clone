@@ -638,8 +638,10 @@ html {
     /* border: .1rem solid red; */
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: start;
+    gap: .4rem;
     margin-top: .5rem;
+
 }
 
 .PflPostImage {

@@ -120,8 +120,8 @@
                         </div>
                     </div>
 
-                    <div class="mainProfilePostContainer" id="finalProfilePost">
-                        <div class="PflPostImage" id="profileImage">
+                    <div class="mainProfilePostContainer" id="finalPost">
+                        <div class="PflPostImage" id="postImage">
                             <!-- <img src="./images/profilepost2.jpg" alt=""> -->
                             <div class="overlay ">
                                 <span class="overlayIcon">
@@ -281,12 +281,12 @@
             var currentUser = JSON.parse(localStorage.getItem("InstaCurrentUser"))
 
             var userData = JSON.parse(localStorage.getItem("InstaUsers"))
-            var userProfilePost = JSON.parse(localStorage.getItem("InstProfilePosts"))
+            var userPosts = JSON.parse(localStorage.getItem("InstProfilePosts"))
             for (var i = 0; i < userData.length; i++) {
                 if (currentUser.userEmail === userData[i].userEmail) {
                     // alert("got")
-                    if (userData[i].Ppost == undefined) {
-                        userData[i].Ppost = userProfilePost[i];
+                    if (userData[i].posts == undefined) {
+                        userData[i].posts = userPosts[i];
                     }
                     // alert("profile created.")
                     // window.location.href = './cart.html'
@@ -294,10 +294,58 @@
             }
             localStorage.setItem("InstaUsers", JSON.stringify(userData))
 
-            var divToAppendprofileImage = document.getElementById("profileImage")
+            var divToAppendPostImage = document.getElementById("postImage")
             // var divToAppendprofileSubname = document.getElementById("profileSubname")
             // var divToAppendProfileBio = document.getElementById("ProfileBio")
-            var divToAppendfinalProfile = document.getElementById("finalProfilePost")
+            var divToAppendfinalPost = document.getElementById("finalPost")
+            // var divToAppendfinalUsername = document.getElementById("username")
+
+
+
+            var products;
+            for (var i = 0; i < userData.length; i++) {
+                if (currentUser.userEmail == userData[i].userEmail) {
+                    products = userPosts;
+                }
+            }
+            console.log(products, "posts info here");
+            // var finalData = "";
+
+
+
+            var finalPostImage = "";
+            // var finalProfileSubname = "";
+            // var finalProfileBio = "";
+            var finalPost = "";
+
+            for (var i = 0; i < products.length; i++) {
+                finalPost += divToAppendPostImage = ` 
+
+                <div class="PflPostImage" id="postImage">
+                            <img src="${products[i].UserPImg}"> 
+                            <div class="overlay ">
+                                <span class="overlayIcon">
+                                    <span class="ovicon"><i class="fa-solid fa-heart"></i>10</span>
+                                    <span class="ovicon"><i class="fa-solid fa-comment"></i>3</span>
+                                </span>
+                            </div>
+                        </div>
+    
+    
+    `
+                // finalProfileSubname = `${products[i].pSubname}`
+                // finalProfileBio = `${products[i].bio}`
+            }
+
+            // `<div> <img src='${products[i].proImage}'/><br/>
+            //             <h2>${products[i].proName}</h2><br/>
+            //             <h3>${products[i].proPrice}</h3>`
+
+            divToAppendPostImage.innerHTML = finalPostImage;
+            // divToAppendprofileSubname.innerHTML = finalProfileSubname;
+            // divToAppendProfileBio.innerHTML = finalProfileBio;
+            divToAppendfinalPost.innerHTML = finalPost;
+
 
 
         }

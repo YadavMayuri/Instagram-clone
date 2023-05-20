@@ -1,24 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
-    
+
     <form onsubmit="addProfilePost(event)" class="aformcontainer">
-        <input type="text" id="UserPImg" placeholder="User Profile Image URL" class="faInput"><br/>
+        <input type="text" id="UserPImg" placeholder="User Profile Image URL" class="faInput"><br />
         <!-- <input type="text" id="uname" placeholder="User Name" class="faInput"/><br />
         <input type="text" id="pimage" placeholder="Post Image URL" class="faInput"/><br />
         <input type="text" id="pdesc" placeholder="Post Descripiton" class="faInput"><br> -->
 
-        <input type="submit" value="Add Profile Post"  class="abtn"/><br />
+        <input type="submit" value="Add Profile Post" class="abtn" /><br />
     </form>
 
 
-    
+
     <script>
         function addProfilePost(event) {
             event.preventDefault();
@@ -35,9 +37,13 @@
             localStorage.setItem("InstProfilePosts", JSON.stringify(LS));
 
             alert("Profile Post Added Successfully.")
+            // window.location.href="./UserProfile.html"
+            document.getElementById("UserPImg").value = "";
+
 
 
         }
     </script>
 </body>
+
 </html>
