@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,6 +9,7 @@
     <link rel="stylesheet" href="style.css">
     <script src="https://kit.fontawesome.com/174a9c1444.js" crossorigin="anonymous"></script>
 </head>
+
 <body>
     <div id="profileScreen">
 
@@ -63,16 +65,18 @@
 
             <div class="rightMainProfileContainer">
                 <div class="UProfileTopSection">
-                    <div class="UProfileLeftSection">
-                        <div class="UPofileImag">
-                            <img src="./images/mayuri1.jpeg" alt="">
+                    <div class="UProfileLeftSection" id="finalProfile">
+                        <div class="UPofileImag" id="profileImage">
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQjYmlp9JDeNMaFZzw9S3G1dVztGqF_2vq9nA&usqp=CAU"
+                                alt="">
                         </div>
 
                     </div>
                     <div class="UProfileRightSection">
                         <div class="TopUProfileOptions">
-                            <span class="UInstaID">mayuri_01 </span>
-                            <span class="EditProfileOption">edit profile </span>
+                            <span class="UInstaID" id="profileSubname">Name </span>
+                            <span class="EditProfileOption" onclick="window.location.href='addProfileBio.html'">edit
+                                profile </span>
                             <span class="UProfileSettingOption"><i class="fa-solid fa-gear"></i></span>
                         </div>
 
@@ -92,9 +96,9 @@
 
                         </div>
 
-                        <div class="UProfileBioWrapper">
-                            <div class="UserSubName"> M</div>
-                            <div class="UserBio"> Full Stack Developer</div>
+                        <div class="UProfileBioWrapper" id="ProfileBio">
+                            <!-- <div class="UserSubName" > M</div> -->
+                            <div class="UserBio"> </div>
                         </div>
                     </div>
 
@@ -116,9 +120,9 @@
                         </div>
                     </div>
 
-                    <div class="mainProfilePostContainer">
-                        <div class="PflPostImage">
-                            <img src="./images/profilepost2.jpg" alt="">
+                    <div class="mainProfilePostContainer" id="finalProfilePost">
+                        <div class="PflPostImage" id="profileImage">
+                            <!-- <img src="./images/profilepost2.jpg" alt=""> -->
                             <div class="overlay ">
                                 <span class="overlayIcon">
                                     <span class="ovicon"><i class="fa-solid fa-heart"></i>10</span>
@@ -126,7 +130,7 @@
                                 </span>
                             </div>
                         </div>
-                        <div class="PflPostImage">
+                        <!-- <div class="PflPostImage">
                             <img src="./images/profilepost1.jpg" alt="">
                             <div class="overlay ">
                                 <span class="overlayIcon">
@@ -143,7 +147,7 @@
                                     <span class="ovicon"><i class="fa-solid fa-comment"></i>3</span>
                                 </span>
                             </div>
-                        </div>
+                        </div> -->
 
 
                     </div>
@@ -168,20 +172,20 @@
                         <span class="footerLink"> contact uploading & non-users</span>
                         <span class="footerLink"> meta verified</span>
                     </div>
-    
+
                     <div class="copyrightFooter">
                         <span class="footerLink">English</span>
                         <span class="footerLink">© 2023 Instagram from Meta</span>
                     </div>
                 </div>
-               
+
 
             </div>
 
         </div>
 
     </div>
-    
+
 
     <script>
         window.onload = function () {
@@ -207,77 +211,8 @@
             // }
 
 
-            var divToAppendAllPosts = document.getElementById("InstaPostsContainer")
 
-            var divToAppendAllStories = document.getElementById("InstaStoryContainer")
-
-            var finalInstaPosts = "";
-
-            var finalInstaStory ="";
-
-            var postsFromLS = JSON.parse(localStorage.getItem("InstPosts"))
-
-            var storyFromLS = JSON.parse(localStorage.getItem("InstStory"))
-
-            for (var i=0; i<storyFromLS.length; i++){
-                finalInstaStory +=` <div class="singleStoryWrap">
-                        <div class="storyImgWrap">
-                            <img src="${storyFromLS[i].UserPImg}" alt="">
-                        </div>
-                        <div class="storyUserName">
-                            ${storyFromLS[i].UserName}
-                        </div>
-                    </div>`
-            }
-
-            divToAppendAllStories.innerHTML = finalInstaStory;
-
-
-            for (var i = postsFromLS.length-1; i >= 0; i--) {
-
-                finalInstaPosts += `<div class="singlePostWrap" onclick='redirect(${JSON.stringify(postsFromLS[i])})'>
-                        <div class="postHeaderSection">
-                            <div class="leftheadwrap">
-                                <div class="postProfileImgWrap">
-                                    <img src="${postsFromLS[i].UserPImg}" alt="">
-                                </div>
-                                <span class="PostUserName"> ${postsFromLS[i].UserName}</span>
-                                <span class="divider">.</span>
-                                <span class="postUploadHours"> 1d</span>
-                                <!-- <span class="followOpt">Follow</span> -->
-                            </div>
-                            <span class="rightOptionsicon"><i class="fa-solid fa-ellipsis"></i></span>
-                        </div>
-                        <div class="postContentSection">
-                            <img src="${postsFromLS[i].PostImg}" alt="">
-                        </div>
-                        <div class="postrelOptions">
-                            <div class="leftPostROptions">
-                                <span><i class="fa-regular fa-heart"></i> </span>
-                                <span><i class="fa-regular fa-comment"></i> </span>
-                                <span><i class="fa-regular fa-paper-plane"></i> </span>
-                            </div>
-                            <div class="rightPostROption">
-                                <span><i class="fa-regular fa-bookmark"></i></span>
-                            </div>
-                        </div>
-                        <div class="likesCount">934 <span>likes</span></div>
-                        <p class="postDescSection">
-                            <span class="postUsernamedesc">${postsFromLS[i].UserName} </span>
-                            <span class="postdescription">${postsFromLS[i].PostDecs}</span>
-                        </p>
-                        <hr class="hrline">
-                        
-                    </div>`
-
-            }
-
-            divToAppendAllPosts.innerHTML = finalInstaPosts;
-
-
-
-
-            // user profile post section
+            // user profile-Bio section
 
             var currentUser = JSON.parse(localStorage.getItem("InstaCurrentUser"))
 
@@ -300,13 +235,14 @@
             var divToAppendProfileBio = document.getElementById("ProfileBio")
             var divToAppendfinalProfile = document.getElementById("finalProfile")
             // var divToAppendfinalUsername = document.getElementById("username")
-            
+
 
 
             var products;
             for (var i = 0; i < userData.length; i++) {
                 if (currentUser.userEmail == userData[i].userEmail) {
                     products = userBio;
+                    // products = userData[i].push(userBio);
                 }
             }
             console.log(products, "bio info here");
@@ -320,9 +256,10 @@
             var finalProfile = "";
 
             for (var i = 0; i < products.length; i++) {
-                finalProfile = finalProfileImage = `<div class="profile-img" id="profileImage">
-                    <img src='${products[i].pimage}'/>
-                            </div>
+                finalProfile = finalProfileImage = `
+                            <div class="UPofileImag">
+                            <img src="${products[i].pimage}" alt="">
+                        </div>
                 `
                 finalProfileSubname = `${products[i].pSubname}`
                 finalProfileBio = `${products[i].bio}`
@@ -339,7 +276,28 @@
 
 
 
+            // user profile post section
 
+            var currentUser = JSON.parse(localStorage.getItem("InstaCurrentUser"))
+
+            var userData = JSON.parse(localStorage.getItem("InstaUsers"))
+            var userProfilePost = JSON.parse(localStorage.getItem("InstProfilePosts"))
+            for (var i = 0; i < userData.length; i++) {
+                if (currentUser.userEmail === userData[i].userEmail) {
+                    // alert("got")
+                    if (userData[i].Ppost == undefined) {
+                        userData[i].Ppost = userProfilePost[i];
+                    }
+                    // alert("profile created.")
+                    // window.location.href = './cart.html'
+                }
+            }
+            localStorage.setItem("InstaUsers", JSON.stringify(userData))
+
+            var divToAppendprofileImage = document.getElementById("profileImage")
+            // var divToAppendprofileSubname = document.getElementById("profileSubname")
+            // var divToAppendProfileBio = document.getElementById("ProfileBio")
+            var divToAppendfinalProfile = document.getElementById("finalProfilePost")
 
 
         }
@@ -353,4 +311,5 @@
         }
     </script>
 </body>
+
 </html>
