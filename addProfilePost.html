@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instagram</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/174a9c1444.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    
+    <div class="add-product-container">
+      
+        <form action="" onsubmit="createProfile(event)">
+            <h1 class="admin-panel-title">create Profile</h1>
+            <div class="input_wrap">
+                <input type="text" id="pSubname" required  autocomplete="off"/>
+                <label>post sub name</label>
+            </div>
+            <div class="input_wrap">
+                <input type="text" id="pimage" required  autocomplete="off"/>
+                <label>post Image url</label>
+            </div>
+            <div class="input_wrap">
+                <textarea rows="4" cols="50" name="comment" id="bio">
+                    Enter text here...</textarea>
+                <label>bio</label>
+            </div>
+
+           <div class="submit-field">
+            <input type="submit" value="Done" class="admin-panel-btn">
+           </div>
+                
+            </div>
+        
+        </form>
+    </div>
+
+</div>
+<script>
+function createProfile(event) {
+    event.preventDefault();
+    // alert("Product adding....")
+    var pSubname = document.getElementById("pSubname").value;
+    var pimage = document.getElementById("pimage").value;
+    var bio = document.getElementById("bio").value;
+    var product = { pSubname, pimage,bio};
+
+    var LS = JSON.parse(localStorage.getItem("instagramProfile")) || [];
+    LS.push(product);
+    localStorage.setItem("instagramProfile", JSON.stringify(LS));
+
+    alert("Profile updated")
+    window.location.href='./profile.html'
+     profileSubname = document.getElementById("pSubname").value = "";
+     profileImage = document.getElementById("pimage").value = "";
+   ProfileBio = document.getElementById("bio").value = "";
+}
+</script>
+
+</body>
+</html>
