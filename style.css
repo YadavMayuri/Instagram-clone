@@ -527,13 +527,15 @@ html {
     font-size: 1.4rem;
     font-weight: 550;
     text-transform: capitalize;
-    background-color: rgb(236, 231, 231);
-    padding: .5rem 1rem;
-    border-radius: .3rem;
+    background-color: #EFEFEF;
+    padding: .7rem 1.6rem;
+    border-radius: .5rem;
     margin-right: 2.5rem;
     cursor: pointer;
 }
-
+.EditProfileOption:hover{
+    background-color: rgb(228, 227, 227);
+}
 .UProfileSettingOption {
     font-size: 1.8rem;
     cursor: pointer;
