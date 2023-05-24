@@ -722,9 +722,7 @@ html {
     border-radius: .4rem;
     padding: .8rem;
 }
-.aformcontainer{
-    margin:2rem 0;
-}
+
 .abtn{
     width: 100%;
     background-color: dodgerblue;
@@ -869,15 +867,52 @@ html {
     cursor: pointer;
 }
 
+.AddPostSreenContainer{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+.right-add-post-container{
+    margin-left: 20%;
+    padding: 3rem;
+    width: 80%;
+}
+.settingshead{
+    font-size: 2.4rem ;
+    font-weight: 550;
+}
+.settingConatiner{
+    display: flex;
+    border: .1rem solid lightgray;
+    border-radius: .5rem;
+    width: 95%;
+    margin: auto;
+    justify-content: space-between;
+    margin-top: 2rem;
 
-
-
-
-
-
-
-
-
+}
+.leftSettingsWrapper{
+    border: .1rem solid red;
+    width: 30%;
+    padding: 2rem;
+    font-style: 1.4rem;
+}
+.rightSettingsWrapper{
+    width: 70%;
+    border: .1rem solid blue;
+    padding: 4rem;
+}
+.pwrap{
+    display: flex;
+    align-items: center;
+}
+.metalogowrap{
+    width: 20%;
+}
+.metalogowrap img{
+    width: 100%;
+    height: 100%;
+}
 
 
 

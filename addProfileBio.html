@@ -11,35 +11,111 @@
 </head>
 
 <body>
+    <div id="addPostScreen">
+        <div class="AddPostSreenContainer">
 
-    <div class="add-product-container">
+            <div class="navbarWrapper">
+                <div class="instLogoContainer">
+                    <img src="./images/instalogo.png" alt="">
+                </div>
 
-        <form action="" onsubmit="createProfile(event)">
-            <h1 class="admin-panel-title">create Profile</h1>
-            <div class="input_wrap">
-                <input type="text" id="pSubname" required autocomplete="off" />
-                <label>post sub name</label>
-            </div>
-            <div class="input_wrap">
-                <input type="text" id="pimage" required autocomplete="off" />
-                <label>post Image url</label>
-            </div>
-            <div class="input_wrap">
-                <textarea rows="4" cols="50" name="comment" id="bio">
-                    Enter text here...</textarea>
-                <label>bio</label>
+                <div class="navlinkWrapper">
+                    <div class="navlink" onclick="window.location.href='./index.html'">
+                        <span class="nlIcon"><i class="fa-solid fa-house"></i></span>
+                        <span class="navlinkName activeLink">Home</span>
+                    </div>
+                    <div class="navlink" onclick="window.location.href='./searchuser.html'">
+                        <span class="nlIcon"><i class="fa-solid fa-magnifying-glass"></i> </span>
+                        <span class="navlinkName">Search </span>
+                    </div>
+                    <div class="navlink">
+                        <span class="nlIcon"> <i class="fa-regular fa-compass"></i></span>
+                        <span class="navlinkName"> Explore </span>
+                    </div>
+                    <div class="navlink">
+                        <span class="nlIcon"><i class="fa-solid fa-clapperboard"></i> </span>
+                        <span class="navlinkName"> Reels </span>
+                    </div>
+                    <div class="navlink">
+                        <span class="nlIcon"><i class="fa-regular fa-message"></i> </span>
+                        <span class="navlinkName"> Messages </span>
+                    </div>
+                    <div class="navlink">
+                        <span class="nlIcon"><i class="fa-regular fa-heart"></i> </span>
+                        <span class="navlinkName"> Notifications </span>
+                    </div>
+                    <div class="navlink" >
+                        <span class="nlIcon"><i class="fa-regular fa-square-plus"></i> </span>
+                        <span class="navlinkName"> create </span>
+                    </div>
+                    <div class="navlink" onclick="window.location.href='./UserProfile.html'">
+                        <span class="nlIcon"> <i class="fa-regular fa-user"></i> </span>
+                        <span class="navlinkName" id="switch" >Profile </span>
+                    </div>
+
+                    <div id="logout" class="navlink"></div>
+
+                    <div class="navlink">
+                        <span class="nlIcon"><i class="fa-solid fa-bars"></i></span>
+                        <span class="navlinkName"> More </span>
+                    </div>
+                </div>
+
             </div>
 
-            <div class="submit-field">
-                <input type="submit" value="Done" class="admin-panel-btn">
+
+            <div class="right-add-post-container">
+
+                <h1 class="settingshead">Settings</h1>
+
+                <div class="settingConatiner">
+                    <div class="leftSettingsWrapper">
+                        <p class="pwrap">
+                            <span class="metalogowrap">
+                                <img src="https://cdn.pixabay.com/photo/2021/12/13/05/44/meta-6867623_1280.png" alt="">
+                            </span>
+                            <span class="metattxtep"> Meta</span>
+                        </p>
+
+                    </div>
+                    <div class="rightSettingsWrapper">
+                        <form action="" onsubmit="createProfile(event)">
+                            <h1 class="admin-panel-title">Edit profile</h1>
+                            <div class="input_wrap">
+                                <input type="text" id="pSubname" required autocomplete="off" />
+                                <label>post sub name</label>
+                            </div>
+                            <div class="input_wrap">
+                                <input type="text" id="pimage" required autocomplete="off" />
+                                <label>post Image url</label>
+                            </div>
+                            <div class="input_wrap">
+                                <textarea rows="4" cols="50" name="comment" id="bio">
+                                    Enter text here...</textarea>
+                                <label>bio</label>
+                            </div>
+                
+                            <div class="submit-field">
+                                <input type="submit" value="Done" class="admin-panel-btn">
+                            </div>
+                        </form>
+
+                    </div>
+                </div>
+
             </div>
+
+
+
+
+        </div>
 
     </div>
 
-    </form>
-    </div>
+   
 
-    </div>
+
+
     <script>
         function createProfile(event) {
             event.preventDefault();
