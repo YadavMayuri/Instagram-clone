@@ -799,3 +799,83 @@ html {
     font-weight: 550;
 }
 
+.rightsidesearchcontent{
+    margin-left: 20%;
+    /* border: .1rem solid red; */
+}
+.sidebar{
+    width: 35%;
+    height: 42rem;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    margin-top: 12%;
+    padding: 1.5rem 2rem;
+}
+.searchForm{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+.searchtxt{
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+}
+.searchInput{
+    width: 75%;
+    border: .1rem solid lightgray;
+    outline: none;
+    padding: 1rem 2rem;
+    font-size: 1.5rem;
+    border-radius: .6rem;
+        
+}
+.searchTxtBtn{
+    width: 23%;
+    border: none;
+    outline: none;
+    background-color: dodgerblue;
+    font-size: 1.5rem;
+    font-weight: 550;
+    color: white;
+    padding: 1rem ;
+    border-radius: .6rem;
+    text-transform: capitalize;
+    cursor: pointer;
+
+}
+.searchResultContainer{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1.5rem;
+}
+.SearchResName{
+    width: 75%;
+    font-size: 1.5rem;
+    padding: 1rem;
+    cursor: pointer;
+   
+}
+.searchresFollowtxt{
+    width: 23%;
+    font-size: 1.5rem;
+    color: dodgerblue;
+    font-weight: 550;
+    padding: 1rem;
+    cursor: pointer;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

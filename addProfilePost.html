@@ -30,14 +30,14 @@
             // var PostImg = document.getElementById("pimage").value;
             // var PostDecs = document.getElementById("pdesc").value
 
-            var product = { UserPImg };
+            var Profilepost = { UserPImg };
 
             var LS = JSON.parse(localStorage.getItem("InstProfilePosts")) || [];
-            LS.push(product);
+            LS.push(Profilepost);
             localStorage.setItem("InstProfilePosts", JSON.stringify(LS));
 
             alert("Profile Post Added Successfully.")
-            // window.location.href="./UserProfile.html"
+            window.location.href="./UserProfile.html"
             document.getElementById("UserPImg").value = "";
 
 

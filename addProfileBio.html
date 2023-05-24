@@ -49,16 +49,36 @@
             var bio = document.getElementById("bio").value;
             var product = { pSubname, pimage, bio };
 
-            var LS = JSON.parse(localStorage.getItem("instagramProfile")) || [];
-            LS.push(product);
-            localStorage.setItem("instagramProfile", JSON.stringify(LS));
+            var currentUser = JSON.parse(localStorage.getItem("InstaCurrentUser"))
+            var userData = JSON.parse(localStorage.getItem("InstaUsers"))
 
-            alert("Profile updated")
+            for (var i = 0; i < userData.length; i++) {
+                if (currentUser.userEmail == userData[i].userEmail) {
+                    if (userData[i].userbio === undefined) {
+                        userData[i].userbio = ""
+                    } else {
+                        userData[i].userbio = product;
+                    }
+                    alert("user bio added")
+                }
+            }
+
+            localStorage.setItem("InstaUsers", JSON.stringify(userData))
+
+
+
+            // var LS = JSON.parse(localStorage.getItem("instagramProfile")) || [];
+            // LS.push(product);
+            // localStorage.setItem("instagramProfile", JSON.stringify(LS));
+
+            // alert("Profile updated")
             window.location.href = './UserProfile.html'
             profileSubname = document.getElementById("pSubname").value = "";
             profileImage = document.getElementById("pimage").value = "";
             ProfileBio = document.getElementById("bio").value = "";
         }
+
+
     </script>
 
 </body>

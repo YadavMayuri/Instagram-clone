@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instagram</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon"
+        href="https://static.vecteezy.com/system/resources/previews/017/743/717/non_2x/instagram-icon-logo-free-png.png"
+        type="image/x-icon">
+    <script src="https://kit.fontawesome.com/174a9c1444.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+    <div id="searchScreen">
+        <div class="navbarWrapper">
+            <div class="instLogoContainer">
+                <img src="./images/instalogo.png" alt="">
+            </div>
+
+            <div class="navlinkWrapper">
+                <div class="navlink" onclick="window.location.href='./index.html'">
+                    <span class="nlIcon"><i class="fa-solid fa-house"></i></span>
+                    <span class="navlinkName activeLink">Home</span>
+                </div>
+                <div class="navlink">
+                    <span class="nlIcon"><i class="fa-solid fa-magnifying-glass"></i> </span>
+                    <span class="navlinkName">Search </span>
+                </div>
+                <div class="navlink">
+                    <span class="nlIcon"> <i class="fa-regular fa-compass"></i></span>
+                    <span class="navlinkName"> Explore </span>
+                </div>
+                <div class="navlink">
+                    <span class="nlIcon"><i class="fa-solid fa-clapperboard"></i> </span>
+                    <span class="navlinkName"> Reels </span>
+                </div>
+                <div class="navlink">
+                    <span class="nlIcon"><i class="fa-regular fa-message"></i> </span>
+                    <span class="navlinkName"> Messages </span>
+                </div>
+                <div class="navlink">
+                    <span class="nlIcon"><i class="fa-regular fa-heart"></i> </span>
+                    <span class="navlinkName"> Notifications </span>
+                </div>
+                <div class="navlink">
+                    <span class="nlIcon"><i class="fa-regular fa-square-plus"></i> </span>
+                    <span class="navlinkName"> create </span>
+                </div>
+                <div class="navlink" onclick="window.location.href='./UserProfile.html'">
+                    <span class="nlIcon"> <i class="fa-regular fa-user"></i> </span>
+                    <span class="navlinkName" id="switch">Profile </span>
+                </div>
+
+                <div id="logout" class="navlink"></div>
+
+                <div class="navlink">
+                    <span class="nlIcon"><i class="fa-solid fa-bars"></i></span>
+                    <span class="navlinkName"> More </span>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="rightsidesearchcontent">
+
+            <!-- ----------- -->
+            <div class="sidebar">
+                <div>
+                    <h1 class="searchtxt">Search</h1>
+                    <form onsubmit="SearchUser(event)" class="searchForm">
+                        <input type="search" class="searchInput" placeholder="Search" id="SearchUser" />
+                        <input type="submit" class="searchTxtBtn" value="search" />
+                    </form>
+                </div>
+                <div id="SearchRes" >
+                    <div id="SearchResDiv" class="searchResultContainer">
+                        <p class="SearchResName"></p>
+                        <p class="searchresFollowtxt"></p>
+                    </div>
+                    <div id="NoResFound">
+                        <p></p>
+                    </div>
+
+                </div>
+            </div>
+            <!----------------- -->
+
+        </div>
+    </div>
+
+    <script>
+          function SearchUser(event){
+            event.preventDefault();
+            var input=document.getElementById("SearchUser").value;
+            var empty=document.getElementById("NoResFound");
+            
+            // console.log(input,"input here")
+            var divtodisplay=document.getElementById("SearchRes");
+            // input=input.toLowerCase();
+            // var data=document.getElementById("Instagramusers");
+            var currentUser = JSON.parse(localStorage.getItem("InstaCurrentUser"));
+            var userdata = JSON.parse(localStorage.getItem("InstaUsers"));
+            var foundUser = [];
+            var displaysers;
+            var set="No Results";
+            // console.log(set)
+            for (var i = 0; i < userdata.length; i++) {
+                if (userdata[i].userEmail = currentUser.userEmail) {
+                    foundUser.push(userdata[i]);
+                }
+            }
+            console.log(foundUser,"users")
+            for(var i=0;i<foundUser.length;i++){
+                console.log(foundUser[i].user_info,"name here")
+                if(foundUser[i].userName==input){
+                    displayusers=foundUser[i];
+                
+                var display=`<div id="SearchResDiv" class="searchResultContainer">
+                    <p class="SearchResName">${displayusers.userName}</p>
+                    <p class="searchresFollowtxt">Follow</p>
+                </div>`;
+            }
+            else{
+                var nodisplay=`<div id="NoResFound">
+                    <p>${set}</p>
+                </div>`;
+            }
+            }
+           
+            // console.log(display_users,"dis")
+            divtodisplay.innerHTML=display;
+            empty.innerHTML=nodisplay;
+            document.getElementById("SearchUser").value='';
+          
+        }
+
+
+        
+
+        window.onload = function () {
+            // alert("working")
+            var currentUser = JSON.parse(localStorage.getItem("InstaCurrentUser"))
+            // console.log(currentUser,"current user");
+            if (!!currentUser) {
+                // alert(currenUser,"username")
+                var logoutDiv = document.getElementById("logout")
+                var divfromHtml = document.getElementById("switch");
+                // console.log(divfromHtml, "divfromhtml");
+                // var h1=document.createElement("h1");
+                // h1.innerText="Mayuri"
+                // divfromHtml.append(h1)
+                var button = '<span class="nlIcon"><i class="fa-solid fa-arrow-right-from-bracket id=logout-icon"></i></span> <span onclick="logout()" class="navlinkName">Logout</span>'
+                var name = `<span>${currentUser.userName}</span>`;
+                divfromHtml.innerHTML = name;
+                logoutDiv.innerHTML = button;
+
+            }
+            //  else {
+            //     alert("current user absent")
+            // }
+
+
+            }
+
+
+            function logout() {
+            alert("Logout successful.")
+            localStorage.removeItem("InstaCurrentUser")
+            window.location.reload()
+
+
+        }
+    </script>
+</body>
+
+</html>
