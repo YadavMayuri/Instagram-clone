@@ -44,13 +44,13 @@
                         <span class="nlIcon"><i class="fa-regular fa-heart"></i> </span>
                         <span class="navlinkName"> Notifications </span>
                     </div>
-                    <div class="navlink" >
+                    <div class="navlink">
                         <span class="nlIcon"><i class="fa-regular fa-square-plus"></i> </span>
                         <span class="navlinkName"> create </span>
                     </div>
                     <div class="navlink" onclick="window.location.href='./UserProfile.html'">
                         <span class="nlIcon"> <i class="fa-regular fa-user"></i> </span>
-                        <span class="navlinkName" id="switch" >Profile </span>
+                        <span class="navlinkName" id="switch">Profile </span>
                     </div>
 
                     <div id="logout" class="navlink"></div>
@@ -72,34 +72,111 @@
                     <div class="leftSettingsWrapper">
                         <p class="pwrap">
                             <span class="metalogowrap">
-                                <img src="https://cdn.pixabay.com/photo/2021/12/13/05/44/meta-6867623_1280.png" alt="">
+                                <img src="./images/meta-logo.png" alt="">
                             </span>
                             <span class="metattxtep"> Meta</span>
                         </p>
+                        <p class="acConatainer">accounts Center</p>
+                        <p class="metasettingContent"> Manage your connected experiences and account settings across
+                            Meta technologies.</p>
+                        <p class="leftTopMetaOpt">
+                            <span class="leftTopMetaOptIcon"><i class="fa-regular fa-user"></i></span>
+                            <span class="leftTopMetaOptContent">Personal details</span>
+                        </p>
+                        <p class="leftTopMetaOpt">
+                            <span class="leftTopMetaOptIcon"><i class="fa-regular fa-square-check"></i></span>
+                            <span class="leftTopMetaOptContent">Password and security</span>
+                        </p>
+                        <p class="leftTopMetaOpt">
+                            <span class="leftTopMetaOptIcon"><i class="fa-brands fa-adversal"></i></span>
+                            <span class="leftTopMetaOptContent">Ad preferences</span>
+                        </p>
+                        <p class="ACenterTxt">See more in Accounts Center</p>
+                        <hr class="hrlineSetting">
+                        <p class="slefteditPr">Edit profile</p>
+                        <p class="leftbottomp">Apps and websites</p>
+                        <p class="leftbottomp">Email notifications</p>
+                        <p class="leftbottomp">Push notifications</p>
+                        <p class="leftbottomp">What you see</p>
+                        <p class="leftbottomp">Who can see your content</p>
+                        <p class="leftbottomp">How other can interact with you</p>
+                        <p class="leftbottomp">Supervision</p>
+                        <p class="leftbottomp">Help</p>
+                        <p class="swpTxt">Switch to professional account</p>
+
+
 
                     </div>
+
                     <div class="rightSettingsWrapper">
-                        <form action="" onsubmit="createProfile(event)">
-                            <h1 class="admin-panel-title">Edit profile</h1>
-                            <div class="input_wrap">
-                                <input type="text" id="pSubname" required autocomplete="off" />
-                                <label>post sub name</label>
+
+                        <h1 class="srsEditPrTxt">Edit profile</h1>
+
+                        <div class="settingProfileImgnameWrapper" id="finalProfile">
+                            <div class="leftSettingPrImgside">
+                                <div class="setPrImageContainer" id="profileImage">
+                                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQjYmlp9JDeNMaFZzw9S3G1dVztGqF_2vq9nA&usqp=CAU"
+                                        alt="">
+                                </div>
                             </div>
-                            <div class="input_wrap">
-                                <input type="text" id="pimage" required autocomplete="off" />
-                                <label>post Image url</label>
+                            <div class="rifgtsettingNameSide">
+                                <div class="setPrUserName" id="profileSubname">name </div>
+                                <div class="setPrUserName" id="ProfileBio">bio </div>
+
+
                             </div>
-                            <div class="input_wrap">
-                                <textarea rows="4" cols="50" name="comment" id="bio">
-                                    Enter text here...</textarea>
-                                <label>bio</label>
+
+                        </div>
+
+                        <form action="" onsubmit="createProfile(event)" class="editProfileFormWrapper">
+                            <div class="setting_input_wrap">
+                                <label class="setLable">Username</label>
+                                <input type="text" id="pSubname" class="setInputfield" required autocomplete="off" />
                             </div>
-                
-                            <div class="submit-field">
-                                <input type="submit" value="Done" class="admin-panel-btn">
+                            <div class="setting_input_wrap">
+                                <label class="setLable">Profie Photo </label>
+                                <input type="text" id="pimage" class="setInputfield" required autocomplete="off" />
                             </div>
+                            <div class="setting_input_wrap">
+                                <label class="setLable">Bio</label>
+                                <textarea rows="4" cols="50" id="bio" class="setInputfield" placeholder="">
+                                </textarea>
+                            </div>
+                            <div class="setting_input_wrap">
+                                <label class="setLable"></label>
+                                <span class="setInputfield">
+                                    <input type="submit" value="Submit" class="setRSubBtn ">
+                                </span>
+                            </div>
+
+
+
                         </form>
 
+                    </div>
+
+                </div>
+
+                <div class="Settingfooter">
+                    <div class="footerWrapper">
+                        <span class="footerLink"> Meta</span>
+                        <span class="footerLink"> about</span>
+                        <span class="footerLink"> blog </span>
+                        <span class="footerLink"> jobs</span>
+                        <span class="footerLink"> help</span>
+                        <span class="footerLink"> API</span>
+                        <span class="footerLink"> privacy</span>
+                        <span class="footerLink"> terms</span>
+                        <span class="footerLink"> Top Accounts</span>
+                        <span class="footerLink"> locations</span>
+                        <span class="footerLink"> instagram lite</span>
+                        <span class="footerLink"> contact uploading & non-users</span>
+                        <span class="footerLink"> meta verified</span>
+                    </div>
+
+                    <div class="copyrightFooter">
+                        <span class="footerLink">English</span>
+                        <span class="footerLink">© 2023 Instagram from Meta</span>
                     </div>
                 </div>
 
@@ -112,11 +189,78 @@
 
     </div>
 
-   
+
 
 
 
     <script>
+
+
+        window.onload = function () {
+            // alert("working")
+            var currentUser = JSON.parse(localStorage.getItem("InstaCurrentUser"))
+            // console.log(currentUser,"current user");
+            if (!!currentUser) {
+                // alert(currenUser,"username")
+                var logoutDiv = document.getElementById("logout")
+                var divfromHtml = document.getElementById("switch");
+                // console.log(divfromHtml, "divfromhtml");
+                // var h1=document.createElement("h1");
+                // h1.innerText="Mayuri"
+                // divfromHtml.append(h1)
+                var button = '<span class="nlIcon"><i class="fa-solid fa-arrow-right-from-bracket id=logout-icon"></i></span> <span onclick="logout()" class="navlinkName">Logout</span>'
+                var name = `<span>${currentUser.userName}</span>`;
+                divfromHtml.innerHTML = name;
+                logoutDiv.innerHTML = button;
+
+            }
+            //  else {
+            //     alert("current user absent")
+            // }
+
+
+
+            // user profile-Bio section
+
+            var currentUser = JSON.parse(localStorage.getItem("InstaCurrentUser"))
+
+            var userData = JSON.parse(localStorage.getItem("InstaUsers"))
+            var divToAppendprofileImage = document.getElementById("profileImage")
+            var divToAppendprofileSubname = document.getElementById("profileSubname")
+            var divToAppendProfileBio = document.getElementById("ProfileBio")
+            var divToAppendfinalProfile = document.getElementById("finalProfile")
+
+            if (!!currentUser) {
+                var finalProfileBio;
+                for (var i = 0; i < userData.length; i++) {
+                    if (currentUser.userEmail === userData[i].userEmail) {
+                        finalProfileBio = userData[i].userbio
+                    }
+                    console.log(finalProfileBio);
+                }
+            }
+            var forbioimg = ""
+            var forbioname = ""
+            var forbiobio = ""
+            var finalstrBio = ` <div class="leftSettingPrImgside">
+                                <div class="setPrImageContainer" id="profileImage">
+                                    <img src="${finalProfileBio.pimage}" alt="">
+                                </div>
+                            </div>
+                            <div class="rifgtsettingNameSide">
+                                <div class="setPrUserName" id="profileSubname">${finalProfileBio.pSubname} </div>
+                                <div class="setPrUserbio" id="ProfileBio">${finalProfileBio.bio} </div>
+
+                            </div>`
+
+
+            divToAppendprofileImage.innerHTML = forbioimg;
+            divToAppendprofileSubname.innerHTML = forbioname;
+            divToAppendProfileBio.innerHTML = forbiobio;
+            divToAppendfinalProfile.innerHTML = finalstrBio
+        }
+
+
         function createProfile(event) {
             event.preventDefault();
             // alert("Product adding....")
@@ -148,11 +292,12 @@
             // localStorage.setItem("instagramProfile", JSON.stringify(LS));
 
             // alert("Profile updated")
-            window.location.href = './UserProfile.html'
+            window.location.href = './addProfileBio.html'
             profileSubname = document.getElementById("pSubname").value = "";
             profileImage = document.getElementById("pimage").value = "";
             ProfileBio = document.getElementById("bio").value = "";
         }
+
 
 
     </script>

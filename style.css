@@ -533,9 +533,11 @@ html {
     margin-right: 2.5rem;
     cursor: pointer;
 }
-.EditProfileOption:hover{
+
+.EditProfileOption:hover {
     background-color: rgb(228, 227, 227);
 }
+
 .UProfileSettingOption {
     font-size: 1.8rem;
     cursor: pointer;
@@ -619,9 +621,11 @@ html {
     width: 35%;
     margin: auto;
 }
-.ProfileOptionConatainer{
+
+.ProfileOptionConatainer {
     cursor: pointer;
 }
+
 .postOptName {
     text-transform: uppercase;
     font-size: 1.3rem;
@@ -673,20 +677,22 @@ html {
     color: gray;
 
 }
-.copyrightFooter{
+
+.copyrightFooter {
     display: flex;
     justify-content: center;
     align-items: center;
     margin-top: 1rem;
     margin-bottom: 3rem;
 }
-.footer{
+
+.footer {
     width: 100%;
 }
 
 /* add post------------------------------------------ */
 
-.addpostwrapper{
+.addpostwrapper {
     width: 60%;
     /* border: .1rem solid blue; */
     margin: 7rem auto;
@@ -694,27 +700,33 @@ html {
     justify-content: space-between;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
-.leftapcontainer{
+
+.leftapcontainer {
     width: 50%;
     /* border: .1rem solid palegreen; */
 }
-.rightapcontainer{
+
+.rightapcontainer {
     width: 50%;
     /* border: .1rem solid plum; */
-    padding: 3rem  4rem 2rem 4rem;
+    padding: 3rem 4rem 2rem 4rem;
 }
-.apimgwrap{
+
+.apimgwrap {
     width: 100%;
     height: 100%;
 }
-.apimgwrap img{
+
+.apimgwrap img {
     width: 100%;
     height: 100%;
 }
-.formaheading{
+
+.formaheading {
     text-transform: uppercase;
 }
-.faInput{
+
+.faInput {
     width: 100%;
     margin-bottom: 1.5rem;
     outline: none;
@@ -723,7 +735,7 @@ html {
     padding: .8rem;
 }
 
-.abtn{
+.abtn {
     width: 100%;
     background-color: dodgerblue;
     color: white;
@@ -735,13 +747,16 @@ html {
     border-radius: .5rem;
     cursor: pointer;
 }
-.abtn:hover{
+
+.abtn:hover {
     background-color: rgb(17, 136, 255);
 }
-#addstoryscreen .abtn{
+
+#addstoryscreen .abtn {
     margin-top: 8rem;
 }
-.overlayIcon{
+
+.overlayIcon {
     color: white;
     font-size: 1.4rem;
     font-weight: 550;
@@ -752,6 +767,7 @@ html {
     -ms-transform: translate(-50%, -50%);
     text-align: center;
 }
+
 .overlay {
     position: absolute;
     top: 0;
@@ -765,26 +781,30 @@ html {
     background-color: rgba(0, 0, 0, 0.416);
     cursor: pointer;
 
-  }
-  .PflPostImage:hover .overlay {
+}
+
+.PflPostImage:hover .overlay {
     opacity: 1;
-  }
-.ovicon{
-    font-size: 1.4rem ;
+}
+
+.ovicon {
+    font-size: 1.4rem;
     margin-right: 2rem;
     font-weight: 700;
 }
-.ovicon i{
+
+.ovicon i {
     margin-right: .5rem;
 }
 
 
 /* footer------------------- */
 
-.footerlinksi{
+.footerlinksi {
     margin-top: 3rem;
 }
-.linksflink{
+
+.linksflink {
     color: rgb(199, 199, 199);
     text-transform: capitalize;
     font-size: 1.2rem;
@@ -792,10 +812,12 @@ html {
     margin-top: .6rem;
 
 }
-.linksflink span{
+
+.linksflink span {
     margin-right: .4rem;
 }
-.copyrightltxt{
+
+.copyrightltxt {
     color: rgb(199, 199, 199);
     margin-top: 2.5rem;
     text-transform: uppercase;
@@ -803,36 +825,41 @@ html {
     font-weight: 550;
 }
 
-.rightsidesearchcontent{
+.rightsidesearchcontent {
     margin-left: 20%;
     /* border: .1rem solid red; */
 }
-.sidebar{
+
+.sidebar {
     width: 35%;
     height: 42rem;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     margin-top: 12%;
     padding: 1.5rem 2rem;
 }
-.searchForm{
+
+.searchForm {
     width: 100%;
     display: flex;
     justify-content: space-between;
 }
-.searchtxt{
+
+.searchtxt {
     font-size: 2.5rem;
     margin-bottom: 2rem;
 }
-.searchInput{
+
+.searchInput {
     width: 75%;
     border: .1rem solid lightgray;
     outline: none;
     padding: 1rem 2rem;
     font-size: 1.5rem;
     border-radius: .6rem;
-        
+
 }
-.searchTxtBtn{
+
+.searchTxtBtn {
     width: 23%;
     border: none;
     outline: none;
@@ -840,25 +867,28 @@ html {
     font-size: 1.5rem;
     font-weight: 550;
     color: white;
-    padding: 1rem ;
+    padding: 1rem;
     border-radius: .6rem;
     text-transform: capitalize;
     cursor: pointer;
 
 }
-.searchResultContainer{
+
+.searchResultContainer {
     display: flex;
     justify-content: space-between;
     margin-top: 1.5rem;
 }
-.SearchResName{
+
+.SearchResName {
     width: 75%;
     font-size: 1.5rem;
     padding: 1rem;
     cursor: pointer;
-   
+
 }
-.searchresFollowtxt{
+
+.searchresFollowtxt {
     width: 23%;
     font-size: 1.5rem;
     color: dodgerblue;
@@ -867,21 +897,24 @@ html {
     cursor: pointer;
 }
 
-.AddPostSreenContainer{
+.AddPostSreenContainer {
     width: 100%;
     display: flex;
     justify-content: space-between;
 }
-.right-add-post-container{
+
+.right-add-post-container {
     margin-left: 20%;
     padding: 3rem;
     width: 80%;
 }
-.settingshead{
-    font-size: 2.4rem ;
+
+.settingshead {
+    font-size: 2.4rem;
     font-weight: 550;
 }
-.settingConatiner{
+
+.settingConatiner {
     display: flex;
     border: .1rem solid lightgray;
     border-radius: .5rem;
@@ -891,32 +924,192 @@ html {
     margin-top: 2rem;
 
 }
-.leftSettingsWrapper{
-    border: .1rem solid red;
+
+.leftSettingsWrapper {
     width: 30%;
-    padding: 2rem;
-    font-style: 1.4rem;
+    padding: 3rem;
+    font-size: 1.4rem;
 }
-.rightSettingsWrapper{
+
+.rightSettingsWrapper {
     width: 70%;
-    border: .1rem solid blue;
+    border-left: .1rem solid lightgray;
     padding: 4rem;
 }
-.pwrap{
+
+.pwrap {
+    width: 100%;
     display: flex;
     align-items: center;
+    gap: .3rem;
 }
-.metalogowrap{
-    width: 20%;
+
+.metalogowrap {
+    width: 12%;
+    padding: .6rem .2rem .2rem .2rem;
 }
-.metalogowrap img{
+
+.metalogowrap img {
     width: 100%;
     height: 100%;
 }
 
+.metattxtep {
+    width: 88%;
+    font-size: 1.8rem;
+    font-weight: 550;
 
+}
 
+.acConatainer {
+    font-size: 1.6rem;
+    font-weight: 550;
+    text-transform: capitalize;
+    margin-top: 1rem;
+}
 
+.metasettingContent {
+    font-size: 1.2rem;
+    margin-top: 1rem;
+}
 
+.leftTopMetaOpt {
+    display: flex;
+    align-items: center;
+    margin-top: 1rem;
+}
 
+.leftTopMetaOptContent {
+    font-size: 1.2rem;
+    margin-left: .8rem;
+}
 
+.ACenterTxt {
+    font-size: 1.6rem;
+    color: dodgerblue;
+    font-weight: 550;
+    margin-top: 1rem;
+}
+
+.hrlineSetting {
+    margin: 2rem 0 1rem 0;
+}
+
+.slefteditPr {
+    font-size: 1.4rem;
+    font-weight: 550;
+}
+
+.leftbottomp {
+    font-size: 1.4rem;
+    margin: 1.5rem 0 0 0;
+}
+
+.swpTxt {
+    color: dodgerblue;
+    font-weight: 550;
+    margin-top: 1.5rem;
+    font-size: 1.3rem;
+}
+
+.srsEditPrTxt {
+    font-size: 2.4rem;
+    font-weight: 400;
+}
+
+.setting_input_wrap {
+    display: flex;
+    margin-top: 2rem;
+    justify-content: space-between;
+}
+
+.setLable {
+    font-size: 1.6rem;
+    font-weight: 500;
+    width: 20%;
+    text-align: right;
+}
+
+.setInputfield {
+    width: 76%;
+    padding: .6rem;
+    border: .1rem solid lightgray;
+    border-radius: .5rem;
+    outline: none;
+}
+
+.editProfileFormWrapper {
+    width: 90%;
+    margin: 1.5rem auto;
+}
+
+.setRSubBtn {
+    background-color: dodgerblue;
+    color: white;
+    font-weight: 550;
+    border: none;
+    outline: none;
+    padding: .6rem 1.8rem;
+    border-radius: .8rem;
+    font-size: 1.4rem;
+    text-align: left;
+}
+
+.editProfileFormWrapper .setting_input_wrap:nth-child(4) .setInputfield {
+    border: none;
+}
+
+.Settingfooter {
+    padding: 0 6rem;
+}
+
+.settingProfileImgnameWrapper {
+    width: 88%;
+    margin: 3rem auto;
+    /* border: .1rem solid red; */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2rem 3rem;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+
+}
+
+.leftSettingPrImgside {
+    /* border: .1rem solid blue; */
+    width: 20%;
+}
+
+.rifgtsettingNameSide {
+    width: 76%;
+    /* border: .1rem solid palegreen; */
+}
+
+.setPrImageContainer {
+    width: 100%;
+    /* border: .1rem solid red; */
+    height: 100%;
+}
+
+.setPrImageContainer img {
+    width: 100%;
+    height: 100%;
+    border-radius: 100%;
+    border: .1rem solid rgb(232, 232, 232);
+    object-fit: cover;
+    aspect-ratio: 2/2;
+}
+
+.setPrUserName {
+    font-size: 1.8rem;
+    font-weight: 500;
+    padding: .4rem;
+    width: 100%;
+    border-radius: .4rem;
+}
+.setPrUserbio{
+    font-size: 1.8rem;
+    padding: .4rem;
+    width: 100%;
+    border-radius: .4rem;
+}
