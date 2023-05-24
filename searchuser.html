@@ -68,75 +68,14 @@
         <div class="rightsidesearchcontent">
 
             <!-- ----------- -->
-            <div class="sidebar">
-                <div>
-                    <h1 class="searchtxt">Search</h1>
-                    <form onsubmit="SearchUser(event)" class="searchForm">
-                        <input type="search" class="searchInput" placeholder="Search" id="SearchUser" />
-                        <input type="submit" class="searchTxtBtn" value="search" />
-                    </form>
-                </div>
-                <div id="SearchRes" >
-                    <div id="SearchResDiv" class="searchResultContainer">
-                        <p class="SearchResName"></p>
-                        <p class="searchresFollowtxt"></p>
-                    </div>
-                    <div id="NoResFound">
-                        <p></p>
-                    </div>
-
-                </div>
-            </div>
+          
             <!----------------- -->
 
         </div>
     </div>
 
     <script>
-          function SearchUser(event){
-            event.preventDefault();
-            var input=document.getElementById("SearchUser").value;
-            var empty=document.getElementById("NoResFound");
-            
-            // console.log(input,"input here")
-            var divtodisplay=document.getElementById("SearchRes");
-            // input=input.toLowerCase();
-            // var data=document.getElementById("Instagramusers");
-            var currentUser = JSON.parse(localStorage.getItem("InstaCurrentUser"));
-            var userdata = JSON.parse(localStorage.getItem("InstaUsers"));
-            var foundUser = [];
-            var displaysers;
-            var set="No Results";
-            // console.log(set)
-            for (var i = 0; i < userdata.length; i++) {
-                if (userdata[i].userEmail = currentUser.userEmail) {
-                    foundUser.push(userdata[i]);
-                }
-            }
-            console.log(foundUser,"users")
-            for(var i=0;i<foundUser.length;i++){
-                console.log(foundUser[i].user_info,"name here")
-                if(foundUser[i].userName==input){
-                    displayusers=foundUser[i];
-                
-                var display=`<div id="SearchResDiv" class="searchResultContainer">
-                    <p class="SearchResName">${displayusers.userName}</p>
-                    <p class="searchresFollowtxt">Follow</p>
-                </div>`;
-            }
-            else{
-                var nodisplay=`<div id="NoResFound">
-                    <p>${set}</p>
-                </div>`;
-            }
-            }
-           
-            // console.log(display_users,"dis")
-            divtodisplay.innerHTML=display;
-            empty.innerHTML=nodisplay;
-            document.getElementById("SearchUser").value='';
-          
-        }
+ 
 
 
         
