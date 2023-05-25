@@ -97,7 +97,7 @@ html {
     border-right: .1rem solid lightgray;
     height: 100vh;
     padding-top: 4rem;
-    padding-left: 3rem;
+    padding-left: 2rem;
     padding-right: 3rem;
     position: fixed;
     top: 0;
@@ -724,6 +724,7 @@ html {
 
 .formaheading {
     text-transform: uppercase;
+    margin-bottom: 1rem;
 }
 
 .faInput {
@@ -1052,6 +1053,7 @@ html {
     padding: .6rem 1.8rem;
     border-radius: .8rem;
     font-size: 1.4rem;
+    cursor: pointer;
     text-align: left;
 }
 
@@ -1106,11 +1108,180 @@ html {
     padding: .4rem;
     width: 100%;
     border-radius: .4rem;
-    
+
 }
-.setPrUserbio{
+
+.setPrUserbio {
     font-size: 1.8rem;
     padding: .4rem;
     width: 100%;
     border-radius: .4rem;
+}
+
+/* search slider  */
+.slidenavContsiner {
+    display: flex;
+    color: rgb(0, 0, 0);
+    font-size: 1.4rem;
+    width: 100%;
+    height: 100%;
+    margin-top:   -1.5rem;
+    /* border: .2rem solid goldenrod; */
+    background-color: white;
+
+}
+
+.leftSlideNav {
+    width: 18%;
+    /* border: .1rem solid red; */
+    padding: 0 1rem;
+    height: 100%;
+    background-color: white;
+
+}
+
+.rightslideSearch {
+    width: 82%;
+    border-left: .1rem solid lightgray;
+    height: 100%;
+    background-color: white;
+}
+
+.smaallinstalogowrap {
+    width: 70%;
+    padding: .5rem;
+    margin: 4.5rem 0 3rem 0;
+}
+
+.smaallinstalogowrap img {
+    width: 100%;
+    height: 100%;
+}
+
+.leftslideMenuWrap {
+    width: 100%;
+    margin-top: 3rem;
+}
+
+.leftslnavlinkwrap {
+    width: 100%;
+    font-size: 2rem;
+    text-align: center;
+    margin: 1.8rem 0;
+}
+
+/* sidebar */
+
+.sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: white;
+    overflow-x: hidden;
+    transition: 0.5s;
+    border: .1rem solid lightgray;
+}
+
+.sidenav a {
+    /* padding: .8rem .8rem .8rem 3.2rem; */
+    text-decoration: none;
+    font-size: 2.5rem;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+}
+.sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 2.5rem;
+    font-size: 3.6rem;
+    margin-left: 5.8rem;
+}
+
+@media screen and (max-height: 45rem) {
+    .sidenav {
+        padding-top: 1.5rem;
+    }
+
+    .sidenav a {
+        font-size: 1.8rem;
+    }
+}
+
+/* ------------ Search ------------ */
+
+
+.searchbarWrapper {
+    width: 100%;
+}
+
+.searchslinputf {
+    width: 100%;
+    padding: .8rem 1rem;
+    font-size: 1.4rem;
+    background-color:rgb(234, 234, 234);
+    border-radius: .5rem;
+    outline: none;
+    border: none;
+}
+
+.searchFooter {
+    width: 100%;
+    padding: 1.5rem;
+}
+
+.list {
+    width: 100%;
+    font-size: .9rem;
+    /* margin-left: 90px; */
+}
+
+.searchResWrapper {
+    width: 100%;
+    /* border: 1px solid salmon; */
+    display: flex;
+    justify-content: start;
+    gap: 1rem;
+    align-items: center;
+    margin-bottom: .7rem;
+    cursor: pointer;
+    padding: .5rem;
+    border-radius: .7rem
+}
+
+.searchResWrapper:hover {
+    background-color: #eae6e6;
+}
+
+.searchResult {
+    display: contents;
+    font-size: 1.6rem;
+    font-weight: 550;
+}
+
+.searchHeader {
+    width: 100%;
+    padding: 1.5rem;
+    border-bottom: .1rem solid lightgray;
+}
+
+.searchslTxt{
+    margin-top: 2.6rem;
+    font-size: 3rem;
+    margin-bottom: 3rem;
+    font-weight: 550;
+}
+
+.divImg {
+    width: 15%;
+}
+
+.divImg img {
+    width: 100%;
+    aspect-ratio: 3/3;
+    object-fit: cover;
+    border-radius: 100%;
 }

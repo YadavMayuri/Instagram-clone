@@ -263,195 +263,54 @@
             divToAppendProfileBio.innerHTML = forbiobio;
             divToAppendfinalProfile.innerHTML = finalstrBio
 
-            //         var currentUser = JSON.parse(localStorage.getItem("InstaCurrentUser"))
-
-            //         var userData = JSON.parse(localStorage.getItem("InstaUsers"))
-            //         var userBio = JSON.parse(localStorage.getItem("instagramProfile"))
-            //         for (var i = 0; i < userData.length; i++) {
-            //             if (currentUser.userEmail === userData[i].userEmail) {
-            //                 // alert("got")
-            //                 if (userData[i].bio == undefined) {
-            //                     userData[i].bio = userBio[i];
-            //                 }
-            //                 // alert("profile created.")
-            //                 // window.location.href = './cart.html'
-            //             }
-            //         }
-            //         localStorage.setItem("InstaUsers", JSON.stringify(userData))
-
-            //         var divToAppendprofileImage = document.getElementById("profileImage")
-            //         var divToAppendprofileSubname = document.getElementById("profileSubname")
-            //         var divToAppendProfileBio = document.getElementById("ProfileBio")
-            //         var divToAppendfinalProfile = document.getElementById("finalProfile")
-            //         // var divToAppendfinalUsername = document.getElementById("username")
 
 
+            // user profile post section
 
-            //         var products;
-            //         for (var i = 0; i < userData.length; i++) {
-            //             if (currentUser.userEmail == userData[i].userEmail) {
-            //                 products = userBio;
-            //                 // products = userData[i].push(userBio);
-            //             }
-            //         }
-            //         console.log(products, "bio info here");
-            //         // var finalData = "";
-
-
-
-            //         var finalProfileImage = "";
-            //         var finalProfileSubname = "";
-            //         var finalProfileBio = "";
-            //         var finalProfile = "";
-
-            //         for (var i = 0; i < products.length; i++) {
-            //             finalProfile = finalProfileImage = `
-            //                         <div class="UPofileImag">
-            //                         <img src="${products[i].pimage}" alt="">
-            //                     </div>
-            //             `
-            //             finalProfileSubname = `${products[i].pSubname}`
-            //             finalProfileBio = `${products[i].bio}`
-            //         }
-
-            //         // `<div> <img src='${products[i].proImage}'/><br/>
-            //         //             <h2>${products[i].proName}</h2><br/>
-            //         //             <h3>${products[i].proPrice}</h3>`
-
-            //         divToAppendprofileImage.innerHTML = finalProfileImage;
-            //         divToAppendprofileSubname.innerHTML = finalProfileSubname;
-            //         divToAppendProfileBio.innerHTML = finalProfileBio;
-            //         divToAppendfinalProfile.innerHTML = finalProfile
-
-
-
-            //         // user profile post section
-
-
-
-
-            var userPosts = JSON.parse(localStorage.getItem("InstProfilePosts"))
             var currentUser = JSON.parse(localStorage.getItem("InstaCurrentUser"))
             var userData = JSON.parse(localStorage.getItem("InstaUsers"))
-
-
-            var finaluserPost=[];
+            var userProfilePost = JSON.parse(localStorage.getItem("InstProfilePosts"))
             for (var i = 0; i < userData.length; i++) {
-                if (userData[i].userEmail == currentUser.userEmail) {
-                    finaluserPost =userPosts;
-                }
-                console.log(finaluserPost);
-            }
-
-            for (var i = 0; i < userData.length; i++) {
-                if (currentUser.userEmail == userData[i].userEmail) {
-                    if (userData[i].post === undefined) {
-                        userData[i].post = "";
+                if (currentUser.userEmail === userData[i].userEmail) {
+                    // alert("got")
+                    if (userData[i].posts == undefined) {
+                        userData[i].posts = userProfilePost[i];
                     }
-                    else {
-                        userData[i].post = finaluserPost;
-                    }
+                    // alert("profile post created.")
 
                 }
-
             }
-            localStorage.setItem("InstaUsers", JSON.stringify(userData));
+            localStorage.setItem("InstaUsers", JSON.stringify(userData))
 
-            var AllFinalPost;
-            for (var i = 0; i < userData.length; i++) {
-                if (currentUser.userEmail == userData[i].userEmail) {
-                    AllFinalPost = userData[i].post;
+
+            var divToAppendPostImage = document.getElementById("postImage")
+            var divToAppendfinalPost = document.getElementById("finalPost")
+            var products=[];
+            for (var i = 0; i < userProfilePost.length; i++) {
+                if (currentUser.userEmail == userProfilePost[i].PostUserEmail) {
+                    products.push(userProfilePost[i])
                 }
             }
+            console.log(products, "posts here");
 
-            var DivForAllPost = document.getElementById("finalPost");
-            // var profilepostls = JSON.parse(localStorage.getItem("InstProfilePosts"));
-            var UserProfileFinalPost = "";
+            var finalPostImage = "";
+            var finalPost = "";
 
-            for (var i = 0; i < AllFinalPost.length; i++) {
-                UserProfileFinalPost += `
-                        
-                        
-                        <div class="PflPostImage" id="postImage">
-                             <img src="${AllFinalPost[i].UserPImg}" alt="">
-                            <div class="overlay ">
-                                <span class="overlayIcon">
-                                    <span class="ovicon"><i class="fa-solid fa-heart"></i>10</span>
-                                    <span class="ovicon"><i class="fa-solid fa-comment"></i>3</span>
-                                </span>
-                            </div>
-                        </div>`
+            for (var i = 0; i < products.length; i++) {
+                finalPost += divToAppendPostImage = `
+                <div class="PflPostImage" id="postImage">   
+                    <img src="${products[i].UserPImg}"> 
+                    <div class="overlay ">
+                            <span class="overlayIcon">
+                                 <span class="ovicon"><i class="fa-solid fa-heart"></i>10</span>
+                                 <span class="ovicon"><i class="fa-solid fa-comment"></i>3</span>
+                            </span>
+                    </div>
+                </div>`
+
             }
-
-
-            DivForAllPost.innerHTML = UserProfileFinalPost;
-
-
-            // for (var i = 0; i < userData.length; i++) {
-            //             if (currentUser.userEmail === userData[i].userEmail) {
-            //                 // alert("got")
-            //                 if (userData[i].posts == undefined) {
-            //                     userData[i].posts = userPosts[i];
-            //                 }
-            //                 // alert("profile created.")
-            //                 // window.location.href = './cart.html'
-            //             }
-            //         }
-            //         localStorage.setItem("InstaUsers", JSON.stringify(userData))
-
-            //         var divToAppendPostImage = document.getElementById("postImage")
-            //         // var divToAppendprofileSubname = document.getElementById("profileSubname")
-            //         // var divToAppendProfileBio = document.getElementById("ProfileBio")
-            //         var divToAppendfinalPost = document.getElementById("finalPost")
-            //         // var divToAppendfinalUsername = document.getElementById("username")
-
-
-
-            //         var products;
-            //         for (var i = 0; i < userData.length; i++) {
-            //             if (currentUser.userEmail == userData[i].userEmail) {
-            //                 products = userPosts;
-            //             }
-            //         }
-            //         console.log(products, "posts info here");
-            //         // var finalData = "";
-
-
-
-            //         var finalPostImage = "";
-            //         // var finalProfileSubname = "";
-            //         // var finalProfileBio = "";
-            //         var finalPost = "";
-
-            //         for (var i = 0; i < products.length; i++) {
-            //             finalPost += divToAppendPostImage = ` 
-
-            //             <div class="PflPostImage" id="postImage">
-            //                         <img src="${products[i].UserPImg}"> 
-            //                         <div class="overlay ">
-            //                             <span class="overlayIcon">
-            //                                 <span class="ovicon"><i class="fa-solid fa-heart"></i>10</span>
-            //                                 <span class="ovicon"><i class="fa-solid fa-comment"></i>3</span>
-            //                             </span>
-            //                         </div>
-            //                     </div>
-
-
-            // `
-            //             // finalProfileSubname = `${products[i].pSubname}`
-            //             // finalProfileBio = `${products[i].bio}`
-            //         }
-
-            //         // `<div> <img src='${products[i].proImage}'/><br/>
-            //         //             <h2>${products[i].proName}</h2><br/>
-            //         //             <h3>${products[i].proPrice}</h3>`
-
-            //         divToAppendPostImage.innerHTML = finalPostImage;
-            //         // divToAppendprofileSubname.innerHTML = finalProfileSubname;
-            //         // divToAppendProfileBio.innerHTML = finalProfileBio;
-            //         divToAppendfinalPost.innerHTML = finalPost;
-
-
+            divToAppendPostImage.innerHTML = finalPostImage;
+            divToAppendfinalPost.innerHTML = finalPost;
 
         }
 

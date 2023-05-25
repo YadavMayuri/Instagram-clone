@@ -5,32 +5,55 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Instagram</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="https://static.vecteezy.com/system/resources/previews/017/743/717/non_2x/instagram-icon-logo-free-png.png" type="image/x-icon">
+    <script src="https://kit.fontawesome.com/174a9c1444.js" crossorigin="anonymous"></script>
+    <style>
+         body {
+            font-size: 1.4rem;
+            font-weight: 550;
+        }
+    </style>
 </head>
 
 <body>
 
-    <form onsubmit="addProfilePost(event)" class="aformcontainer">
-        <input type="text" id="UserPImg" placeholder="User Profile Image URL" class="faInput"><br />
-        <!-- <input type="text" id="uname" placeholder="User Name" class="faInput"/><br />
-        <input type="text" id="pimage" placeholder="Post Image URL" class="faInput"/><br />
-        <input type="text" id="pdesc" placeholder="Post Descripiton" class="faInput"><br> -->
+    <div class="addpostwrapper">
+        <div class="leftapcontainer">
+            <div class="apimgwrap">
+                <img src="https://embedsocial.com/wp-content/uploads/2020/10/add-links-instagram-posts.jpg" alt="">
+            </div>
+        </div>
+        <div class="rightapcontainer">
 
-        <input type="submit" value="Add Profile Post" class="abtn" /><br />
-    </form>
+            <h2 class="formaheading">Add Profile Post</h2>
+
+            <form onsubmit="addProfilePost(event)" class="aformcontainer">
+                <input type="email" name="" id="UserEmailId" placeholder="User Email" class="faInput"><br>
+                <input type="text" id="UserPImg" placeholder="Profile Post Image" class="faInput"><br />
+                <input type="text" name="" id="PostDescription" placeholder="Post Description" class="faInput"><br>
+              
+                <input type="submit" value="Add Profile Post" class="abtn" /><br />
+            </form>
+        </div>
+
+    </div>
+
+  
 
 
 
     <script>
         function addProfilePost(event) {
             event.preventDefault();
-            // alert("Product adding....")
+            // alert("Post adding....")
             var UserPImg = document.getElementById("UserPImg").value
-            // var UserName = document.getElementById("uname").value;
-            // var PostImg = document.getElementById("pimage").value;
-            // var PostDecs = document.getElementById("pdesc").value
+            var PostUserEmail = document.getElementById("UserEmailId").value
+            var PostDesc = document.getElementById("PostDescription").value
 
-            var Profilepost = { UserPImg };
+         
+            var Profilepost = { UserPImg, PostUserEmail, PostDesc};
 
             var LS = JSON.parse(localStorage.getItem("InstProfilePosts")) || [];
             LS.push(Profilepost);
@@ -39,6 +62,10 @@
             alert("Profile Post Added Successfully.")
             window.location.href="./UserProfile.html"
             document.getElementById("UserPImg").value = "";
+            document.getElementById("UserEmailId").value = "";
+            document.getElementById("PostDescription").value = "";
+
+
 
 
 

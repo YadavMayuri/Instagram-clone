@@ -33,7 +33,7 @@ function register(event) {
                     Ls.push(userdata);
                     localStorage.setItem("InstaUsers", JSON.stringify(Ls))
                     alert("Registration Successful")
-                    window.location.href="./login.html";
+                    window.location.href = "./login.html";
                     document.getElementById("username").value = ""
                     document.getElementById("useremail").value = ""
                     document.getElementById("userpassword").value = ""
@@ -71,13 +71,13 @@ function login(event) {
     for (var i = 0; i < Ls.length; i++) {
         if (Ls[i].userEmail == userEmail && Ls[i].userPassword == userPassword) {
             flag = true;
-            currentUser=Ls[i];
+            currentUser = Ls[i];
         }
     }
     if (flag == true) {
-        localStorage.setItem("InstaCurrentUser",JSON.stringify(currentUser));
+        localStorage.setItem("InstaCurrentUser", JSON.stringify(currentUser));
         alert("login successfull")
-        window.location.href="./index.html";
+        window.location.href = "./index.html";
     }
     else {
         alert("Credintails not matched")
@@ -85,25 +85,43 @@ function login(event) {
 
 }
 
-//add post to profile
-// function addProfilePost(event) {
-//     event.preventDefault();
-//     // alert("Product adding....")
-//     // var pname = document.getElementById("pname").value;
-//     // var pprofile = document.getElementById("pprofile").value;
-//     var pimage = document.getElementById("pimage").value;
-//     // var pcaption = document.getElementById("pcaption").value;
-//     var product = { pimage };
+function openNav() {
+    document.getElementById("mySidenav").style.width = "40rem";
+}
 
-//     var LS = JSON.parse(localStorage.getItem("instagramProfilePosts")) || [];
-//     LS.push(product);
-//     localStorage.setItem("instagramProfilePosts", JSON.stringify(LS));
+function closeNav() {
+    document.getElementById("mySidenav").style.width = "0";
+}
 
-//     alert("Post Added Successfully.")
-//     // window.location.href="./profile.html"
-//     // document.getElementById("pname").value = "";
-//     // document.getElementById("pprofile").value = "";
-//     document.getElementById("pimage").value = "";
-//     // document.getElementById("pcaption").value = "";
-// }
+function search_user() {
+
+    var LS = JSON.parse(localStorage.getItem("InstaUsers"))
+    let input = document.getElementById('searchbar').value
+    input = input.toLowerCase();
+    var divForList = document.getElementsByClassName("searchResult");
+    var showRes = document.getElementById("show")
+
+
+    var listOfUsers = []
+
+    for (var i = 0; i < LS.length; i++) {
+
+        if (LS[i].userName.toLowerCase().includes(input)) {
+            listOfUsers += `
+                 <div class="searchResWrapper">
+                    <div class="divImg">
+                         <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT1c5g9z2f5eeGclAD7dyMVYbdvvk68utTPog&usqp=CAU"/>
+                    </div>
+                    <span class="searchResult">${LS[i].userName}</span>
+                 </div>
+                            `
+
+        }
+
+    }
+    divForList = listOfUsers;
+    showRes.innerHTML = divForList;
+    // document.write(divForList);
+    console.log(divForList);
+}
 

@@ -11,6 +11,9 @@
         href="https://static.vecteezy.com/system/resources/previews/017/743/717/non_2x/instagram-icon-logo-free-png.png"
         type="image/x-icon">
     <script src="https://kit.fontawesome.com/174a9c1444.js" crossorigin="anonymous"></script>
+    <style>
+       
+    </style>
 
 </head>
 
@@ -63,7 +66,7 @@
                         <span class="navlinkName"> More </span>
                     </div>
 
-                    <!-- --------------------------------->
+                    <!-- ---------------------------------------------------------->
 
                     <div id="mySidenav" class="sidenav">
                         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
@@ -139,8 +142,7 @@
 
                     <div class="singleStoryWrap">
                         <div class="storyImgWrap">
-                            <!-- <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQajVijyoJgMl3Gpyve3xw1osi4bljAFkRVaQ&usqp=CAU"
-                                alt=""> -->
+
                         </div>
                         <div class="storyUserName">
 
@@ -155,17 +157,17 @@
                         <div class="postHeaderSection">
                             <div class="leftheadwrap">
                                 <div class="postProfileImgWrap">
-                                    <!-- <img src="https://qph.cf2.quoracdn.net/main-qimg-f34d96176eb12adcc87a17f1e60871f1-lq" alt=""> -->
+
                                 </div>
                                 <span class="PostUserName"> </span>
                                 <span class="divider">.</span>
                                 <span class="postUploadHours"> 1d</span>
-                                <!-- <span class="followOpt">Follow</span> -->
+
                             </div>
                             <span class="rightOptionsicon"><i class="fa-solid fa-ellipsis"></i></span>
                         </div>
                         <div class="postContentSection">
-                            <!-- <img src="./images/u3.jpg" alt=""> -->
+
                         </div>
                         <div class="postrelOptions">
                             <div class="leftPostROptions">
@@ -411,13 +413,50 @@
             alert("Logout successful.")
             localStorage.removeItem("InstaCurrentUser")
             window.location.reload()
-            window.location.href="./login.html"
-
-
         }
-    </script>
 
-    <script src="./main.js"></script>
+
+        function openNav() {
+            document.getElementById("mySidenav").style.width = "40rem";
+        }
+
+        function closeNav() {
+            document.getElementById("mySidenav").style.width = "0";
+        }
+
+        function search_user() {
+
+            var LS = JSON.parse(localStorage.getItem("InstaUsers"))
+            let input = document.getElementById('searchbar').value
+            input = input.toLowerCase();
+            var divForList = document.getElementsByClassName("searchResult");
+            var showRes = document.getElementById("show")
+
+
+            var listOfUsers = []
+
+            for (var i = 0; i < LS.length; i++) {
+
+                if (LS[i].userName.toLowerCase().includes(input)) {
+                    listOfUsers += `
+                         <div class="searchResWrapper">
+                            <div class="divImg">
+                                 <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT1c5g9z2f5eeGclAD7dyMVYbdvvk68utTPog&usqp=CAU"/>
+                            </div>
+                            <span class="searchResult">${LS[i].userName}</span>
+                         </div>
+                                    `
+
+                }
+
+            }
+            divForList = listOfUsers;
+            showRes.innerHTML = divForList;
+            // document.write(divForList);
+            console.log(divForList);
+        }
+
+    </script>
 </body>
 
 </html>
