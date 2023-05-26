@@ -25,7 +25,7 @@
                         <span class="nlIcon"><i class="fa-solid fa-house"></i></span>
                         <span class="navlinkName activeLink">Home</span>
                     </div>
-                    <div class="navlink" onclick="window.location.href='./searchuser.html'">
+                    <div class="navlink" onclick="openNav()">
                         <span class="nlIcon"><i class="fa-solid fa-magnifying-glass"></i> </span>
                         <span class="navlinkName">Search </span>
                     </div>
@@ -60,6 +60,74 @@
                         <span class="nlIcon"><i class="fa-solid fa-bars"></i></span>
                         <span class="navlinkName"> More </span>
                     </div>
+
+                    <!-- --------------------------------->
+
+                    <div id="mySidenav" class="sidenav">
+                        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+
+                        <div class="slidenavContsiner">
+                            <div class="leftSlideNav">
+                                <div class="smaallinstalogowrap">
+                                    <img src="./images/sminstalogo.png" alt="">
+                                </div>
+
+                                <div class="navlinkWrapper">
+                                    <div class="navlink" onclick="window.location.href='./index.html'">
+                                        <span class="nlIcon"><i class="fa-solid fa-house"></i></span>
+
+                                    </div>
+                                    <div class="navlink">
+                                        <span class="nlIcon"><i class="fa-solid fa-magnifying-glass"></i> </span>
+                                    </div>
+                                    <div class="navlink">
+                                        <span class="nlIcon"> <i class="fa-regular fa-compass"></i></span>
+                                    </div>
+                                    <div class="navlink">
+                                        <span class="nlIcon"><i class="fa-solid fa-clapperboard"></i> </span>
+                                    </div>
+                                    <div class="navlink">
+                                        <span class="nlIcon"><i class="fa-regular fa-message"></i> </span>
+                                    </div>
+                                    <div class="navlink">
+                                        <span class="nlIcon"><i class="fa-regular fa-heart"></i> </span>
+                                    </div>
+                                    <div class="navlink">
+                                        <span class="nlIcon"><i class="fa-regular fa-square-plus"></i> </span>
+                                    </div>
+                                    <div class="navlink" onclick="window.location.href='./UserProfile.html'">
+                                        <span class="nlIcon"> <i class="fa-regular fa-user"></i> </span>
+                                        <span class="navlinkName" id="switch"></span>
+                                    </div>
+
+                                    <div id="logout" class="navlink"></div>
+
+                                    <div class="navlink">
+                                        <span class="nlIcon"><i class="fa-solid fa-bars"></i></span>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div class="rightslideSearch">
+                                <div class="searchbarWrapper">
+                                    <div class="searchHeader">
+                                        <h2 class="searchslTxt">Search</h2>
+                                        <input id="searchbar" onkeyup="search_user()" type="search" autocomplete="off"
+                                            name="search" placeholder="Search.." class="searchslinputf">
+                                    </div>
+                                    <div class="searchFooter">
+                                        <div class='list' id="show">
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
                 </div>
 
             </div>
@@ -303,6 +371,7 @@
 
     </script>
 
+<script src="./main.js"></script>
 </body>
 
 </html>
