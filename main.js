@@ -114,7 +114,7 @@ function search_user() {
             listOfUsers += `
                  <div class="searchResWrapper" onclick='redirectToProfile(${JSON.stringify(LS[i])})'>
                     <div class="divImg">
-                         <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT1c5g9z2f5eeGclAD7dyMVYbdvvk68utTPog&usqp=CAU"/>
+                         <img src="${LS[i].userbio.pimage}"/>
                     </div>
                     <span class="searchResult">${LS[i].userName}</span>
                  </div>
