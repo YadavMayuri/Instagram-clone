@@ -85,6 +85,8 @@ function login(event) {
 
 }
 
+
+//side search-bar
 function openNav() {
     document.getElementById("mySidenav").style.width = "40rem";
 }
@@ -93,6 +95,8 @@ function closeNav() {
     document.getElementById("mySidenav").style.width = "0";
 }
 
+
+// search user
 function search_user() {
 
     var LS = JSON.parse(localStorage.getItem("InstaUsers"))
@@ -108,7 +112,7 @@ function search_user() {
 
         if (LS[i].userName.toLowerCase().includes(input)) {
             listOfUsers += `
-                 <div class="searchResWrapper">
+                 <div class="searchResWrapper" onclick='redirectToProfile(${JSON.stringify(LS[i])})'>
                     <div class="divImg">
                          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT1c5g9z2f5eeGclAD7dyMVYbdvvk68utTPog&usqp=CAU"/>
                     </div>
@@ -121,7 +125,19 @@ function search_user() {
     }
     divForList = listOfUsers;
     showRes.innerHTML = divForList;
-    // document.write(divForList);
     console.log(divForList);
 }
+
+
+
+// redirecting to user profile from serach result
+
+function redirectToProfile(product) {
+    var single_Profile = JSON.stringify(product);
+    // console.log(s, " s here")
+    // alert("Working")
+    localStorage.setItem("SearchProfile", single_Profile);
+    window.location.href = './SearchProfile.html'
+}
+
 

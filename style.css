@@ -919,10 +919,10 @@ html {
     display: flex;
     border: .1rem solid lightgray;
     border-radius: .5rem;
-    width: 95%;
+    width: 88%;
     margin: auto;
     justify-content: space-between;
-    margin-top: 2rem;
+    margin-top: 3rem;
 
 }
 
@@ -1064,7 +1064,7 @@ html {
 }
 
 .Settingfooter {
-    padding: 0 6rem;
+    padding: 0 7rem;
 }
 
 .settingProfileImgnameWrapper {
