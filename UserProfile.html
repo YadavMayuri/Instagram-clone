@@ -161,7 +161,7 @@
                                 <span class="followersTxt">followers</span>
                             </div>
                             <div class="followingTxtCountWrap">
-                                <span class="followingCount"> 0</span>
+                                <span class="followingCount" id="FollowingUsers"> 0</span>
                                 <span class="followingTxt">following</span>
                             </div>
 
@@ -196,8 +196,8 @@
                             <!-- <img src="./images/profilepost2.jpg" alt=""> -->
                             <div class="overlay ">
                                 <span class="overlayIcon">
-                                    <span class="ovicon"><i class="fa-solid fa-heart"></i>10</span>
-                                    <span class="ovicon"><i class="fa-solid fa-comment"></i>3</span>
+                                    <span class="ovicon"><i class="fa-solid fa-heart"></i>0</span>
+                                    <span class="ovicon"><i class="fa-solid fa-comment"></i>0</span>
                                 </span>
                             </div>
                         </div>
@@ -263,6 +263,7 @@
 
 
 
+
             // user profile-Bio section
 
             var currentUser = JSON.parse(localStorage.getItem("InstaCurrentUser"))
@@ -311,7 +312,7 @@
                                 <span class="followersTxt">followers</span>
                             </div>
                             <div class="followingTxtCountWrap">
-                                <span class="followingCount"> 0</span>
+                                <span class="followingCount" > 0</span>
                                 <span class="followingTxt">following</span>
                             </div>
 
@@ -329,8 +330,7 @@
             divToAppendprofileImage.innerHTML = forbioimg;
             divToAppendprofileSubname.innerHTML = forbioname;
             divToAppendProfileBio.innerHTML = forbiobio;
-            divToAppendfinalProfile.innerHTML = finalstrBio
-
+            divToAppendfinalProfile.innerHTML = finalstrBio;
 
 
             // user profile post section
@@ -353,7 +353,7 @@
 
             var divToAppendPostImage = document.getElementById("postImage")
             var divToAppendfinalPost = document.getElementById("finalPost")
-            var products=[];
+            var products = [];
             for (var i = 0; i < userProfilePost.length; i++) {
                 if (currentUser.userEmail == userProfilePost[i].PostUserEmail) {
                     products.push(userProfilePost[i])
@@ -370,8 +370,8 @@
                     <img src="${products[i].UserPImg}"> 
                     <div class="overlay ">
                             <span class="overlayIcon">
-                                 <span class="ovicon"><i class="fa-solid fa-heart"></i>10</span>
-                                 <span class="ovicon"><i class="fa-solid fa-comment"></i>3</span>
+                                 <span class="ovicon"><i class="fa-solid fa-heart"></i>0</span>
+                                 <span class="ovicon"><i class="fa-solid fa-comment"></i>0</span>
                             </span>
                     </div>
                 </div>`
@@ -386,6 +386,7 @@
             alert("Logout successful.")
             localStorage.removeItem("InstaCurrentUser")
             window.location.reload()
+            window.location.href = "./login.html"
 
 
         }

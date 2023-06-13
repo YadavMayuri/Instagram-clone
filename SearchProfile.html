@@ -146,22 +146,22 @@
                     <div class="UProfileRightSection">
                         <div class="TopUProfileOptions">
                             <span class="UInstaID" id="profileSubname">Name </span>
-                            <span class="EditProfileOption" onclick="window.location.href='addProfileBio.html'">edit
-                                profile </span>
-                            <span class="UProfileSettingOption"><i class="fa-solid fa-gear"></i></span>
+                            <span class="FollowProfileOption"  id="followCountNo" onclick="followingCount(event)">Follow</span>
+                            <span class="EditProfileOption" >Message</span>
+                           
                         </div>
 
                         <div class="MiddleProfileOptions">
                             <div class="postTxtCountWrap">
-                                <span class="PostCount"> 3</span>
+                                <span class="PostCount"> 0</span>
                                 <span class="PostTxt">posts</span>
                             </div>
                             <div class="followersTxtCountWrap">
-                                <span class="followersCount"> 100</span>
+                                <span class="followersCount" id="FollowCount"> 0</span>
                                 <span class="followersTxt">followers</span>
                             </div>
                             <div class="followingTxtCountWrap">
-                                <span class="followingCount"> 90</span>
+                                <span class="followingCount"> 0</span>
                                 <span class="followingTxt">following</span>
                             </div>
 
@@ -263,7 +263,7 @@
             // }
 
 
-            // current profile
+            // search profile
 
             var profile = JSON.parse(localStorage.getItem("SearchProfile"));
 
@@ -272,12 +272,10 @@
             var divToAppendProfileImage = document.getElementById("profileImage");
             var divToAppendPostImage = document.getElementById("postImage");
 
-
             var profileBio = `${profile.userbio.bio}`
             var postName = `${profile.userbio.pSubname}`
             var profileImage = `<img src='${profile.userbio.pimage}'/>`
             var postImage = `<img src='${profile.posts.UserPImg}'/>`
-
 
             console.log(profileBio, "here");
             divToAppendProfileBio.innerHTML = profileBio;
@@ -292,6 +290,7 @@
             alert("Logout successful.")
             localStorage.removeItem("InstaCurrentUser")
             window.location.reload()
+            window.location.href="./login.html"
 
 
         }

@@ -140,4 +140,3 @@ function redirectToProfile(product) {
     window.location.href = './SearchProfile.html'
 }
 
-
