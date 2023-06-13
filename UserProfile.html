@@ -157,11 +157,11 @@
                                 <span class="PostTxt">posts</span>
                             </div>
                             <div class="followersTxtCountWrap">
-                                <span class="followersCount"> 0</span>
+                                <span class="followersCount"  id="followerId" > 0</span>
                                 <span class="followersTxt">followers</span>
                             </div>
                             <div class="followingTxtCountWrap">
-                                <span class="followingCount" id="FollowingUsers"> 0</span>
+                                <span class="followingCount" id="followingID"> 0</span>
                                 <span class="followingTxt">following</span>
                             </div>
 
@@ -273,12 +273,14 @@
             var divToAppendprofileSubname = document.getElementById("profileSubname")
             var divToAppendProfileBio = document.getElementById("ProfileBio")
             var divToAppendfinalProfile = document.getElementById("finalProfile")
-
+            var divForFollowing = document.getElementById("followingID")
             if (!!currentUser) {
                 var finalProfileBio;
+                var followingCount;
                 for (var i = 0; i < userData.length; i++) {
                     if (currentUser.userEmail === userData[i].userEmail) {
                         finalProfileBio = userData[i].userbio
+                        followingCount = userData[i].following;
                     }
                     console.log(finalProfileBio);
                 }
@@ -286,6 +288,7 @@
             var forbioimg = ""
             var forbioname = ""
             var forbiobio = ""
+            var following=`${followingCount}`
             var finalstrBio = ` 
                     <div class="UProfileLeftSection" >
                         <div class="UPofileImag" id="profileImage">
@@ -304,15 +307,15 @@
 
                         <div class="MiddleProfileOptions">
                             <div class="postTxtCountWrap">
-                                <span class="PostCount"> 0</span>
+                                <span class="PostCount"> 1</span>
                                 <span class="PostTxt">posts</span>
                             </div>
                             <div class="followersTxtCountWrap">
-                                <span class="followersCount"> 0</span>
+                                <span class="followersCount" id="followerId" > 1</span>
                                 <span class="followersTxt">followers</span>
                             </div>
                             <div class="followingTxtCountWrap">
-                                <span class="followingCount" > 0</span>
+                                <span class="followingCount"  id="followingID"> ${followingCount}</span>
                                 <span class="followingTxt">following</span>
                             </div>
 
@@ -331,6 +334,7 @@
             divToAppendprofileSubname.innerHTML = forbioname;
             divToAppendProfileBio.innerHTML = forbiobio;
             divToAppendfinalProfile.innerHTML = finalstrBio;
+            divForFollowing.innerHTML = following;
 
 
             // user profile post section

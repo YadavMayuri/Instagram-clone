@@ -105,18 +105,19 @@ function search_user() {
     var divForList = document.getElementsByClassName("searchResult");
     var showRes = document.getElementById("show")
 
-
     var listOfUsers = []
 
     for (var i = 0; i < LS.length; i++) {
 
         if (LS[i].userName.toLowerCase().includes(input)) {
             listOfUsers += `
-                 <div class="searchResWrapper" onclick='redirectToProfile(${JSON.stringify(LS[i])})'>
+                 <div class="searchResWrapper">
                     <div class="divImg">
                          <img src="${LS[i].userbio.pimage}"/>
+                         <span class="searchResult"  onclick='redirectToProfile(${JSON.stringify(LS[i])})'>${LS[i].userName}</span>
                     </div>
-                    <span class="searchResult">${LS[i].userName}</span>
+                   
+                    <span class="searchResultFollowTxt"  onclick='follow(${JSON.stringify(LS[i])})'>Follow</span>
                  </div>
                             `
 
@@ -140,3 +141,47 @@ function redirectToProfile(product) {
     window.location.href = './SearchProfile.html'
 }
 
+
+
+//following 
+
+function follow() {
+    var userData = JSON.parse(localStorage.getItem("InstaUsers"))
+    var userDataforfollwing = JSON.parse(localStorage.getItem("InstaUsers"))
+    var othersProfile = JSON.parse(localStorage.getItem("SearchProfile"))
+    var currentUser = JSON.parse(localStorage.getItem("InstaCurrentUser"))
+    var folloerCount = 0;
+    var followingCount = 0;
+    for (var i = 0; i < userData.length; i++) {
+        if (othersProfile.userEmail == userData[i].userEmail) {
+            if (userData[i].followers === undefined) {
+                userData[i].followers = 0;
+            }
+            else {
+                folloerCount++
+
+                userData[i].followers = folloerCount;
+                console.log(folloerCount,"folloerCount");
+            }
+        }
+    }
+    localStorage.setItem("InstaUsers", JSON.stringify(userData));
+
+    for (var i = 0; i < userDataforfollwing.length; i++) {
+        if (currentUser.userEmail == userDataforfollwing[i].userEmail) {
+            if (userDataforfollwing[i].following === undefined) {
+                userDataforfollwing[i].following = 0;
+            }
+            else {
+                followingCount++
+
+                userDataforfollwing[i].following = followingCount;
+            }
+        }
+    }
+    localStorage.setItem("InstaUsers", JSON.stringify(userDataforfollwing));
+
+    alert("following!")
+    window.location.reload();
+
+}

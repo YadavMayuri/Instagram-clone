@@ -157,11 +157,11 @@
                                 <span class="PostTxt">posts</span>
                             </div>
                             <div class="followersTxtCountWrap">
-                                <span class="followersCount" id="FollowCount"> 0</span>
+                                <span class="followersCount"  id="followerId"> 0</span>
                                 <span class="followersTxt">followers</span>
                             </div>
                             <div class="followingTxtCountWrap">
-                                <span class="followingCount"> 0</span>
+                                <span class="followingCount"  id="followingID"> 0</span>
                                 <span class="followingTxt">following</span>
                             </div>
 
@@ -271,17 +271,30 @@
             var divToAppendProfileName = document.getElementById("profileSubname");
             var divToAppendProfileImage = document.getElementById("profileImage");
             var divToAppendPostImage = document.getElementById("postImage");
+            var divForFolloers = document.getElementById("followerId");
+
+            var followersCount;
+            for (var i = 0; i < userData.length; i++) {
+                if (profile.userEmail == userData[i].userEmail) {
+                    followersCount = userData[i].followers;
+                }
+            }
+
+            console.log(followersCount,"followersCount");
+
 
             var profileBio = `${profile.userbio.bio}`
             var postName = `${profile.userbio.pSubname}`
             var profileImage = `<img src='${profile.userbio.pimage}'/>`
             var postImage = `<img src='${profile.posts.UserPImg}'/>`
+            var profileFollowers = `${followersCount}`
 
             console.log(profileBio, "here");
             divToAppendProfileBio.innerHTML = profileBio;
             divToAppendProfileName.innerHTML = postName;
             divToAppendProfileImage.innerHTML = profileImage;
             divToAppendPostImage.innerHTML = postImage;
+            divForFolloers.innerHTML = profileFollowers;
            
         }
 

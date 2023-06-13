@@ -1260,8 +1260,8 @@ html {
     width: 100%;
     /* border: 1px solid salmon; */
     display: flex;
-    justify-content: start;
-    gap: 1rem;
+    justify-content: space-between;
+    /* gap: 1rem; */
     align-items: center;
     margin-bottom: .7rem;
     cursor: pointer;
@@ -1278,7 +1278,12 @@ html {
     font-size: 1.6rem;
     font-weight: 550;
 }
-
+.searchResultFollowTxt{
+    display: contents;
+    font-size: 1.6rem;
+    font-weight: 550;
+    color: dodgerblue;
+}
 .searchHeader {
     width: 100%;
     padding: 1.5rem;
@@ -1294,6 +1299,9 @@ html {
 
 .divImg {
     width: 15%;
+    display: flex;
+    align-items: center;
+    gap: 1.4rem;
 }
 
 .divImg img {
